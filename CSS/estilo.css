@@ -1,0 +1,1228 @@
+/* fuentes */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url("../fuentes/opendyslexic-0.910.12-rc2-2019.10.17/OpenDyslexic-Bold.woff2") format('woff2'),
+         url("../fuentes/opendyslexic-0.910.12-rc2-2019.10.17/OpenDyslexic-Bold.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+.permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.rampart-one-regular {
+    font-family: "Rampart One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.protest-revolution-regular {
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.kaushan-script-regular {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.oswald-oswald {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Estilo enlace saltar contenido */
+.salta-al-contenido {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.salta-al-contenido:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    padding: 10px;
+    background-color: #eee;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilo principal */
+*{
+    margin: 0;
+}
+body{
+        background-image: url(../Recursos/DamaDelLago.jpg) ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: "oswald";
+        font-size: medium;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: .2fr 2fr;
+    }
+        /* Estilos header*/
+    header{
+        background: linear-gradient(to bottom, #FA0C00, #8C0700);
+        border-radius: 1em;
+        grid-column: 1/5;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(2,.4fr);
+    }
+
+    .linkIni{
+        grid-column: 1/4;
+        grid-row: 1;
+        justify-self: center;
+        width: 10em;
+    }
+    .linkIni h1{
+        width: 10em;
+        font-size: 1.4em;
+        font-family: "Permanent Marker";    
+    }
+
+    .naveg{
+        grid-column: 1/6;
+        grid-row: 2;
+    }
+    #nav{
+        opacity: 0;
+        border-radius: 1em;
+        height: auto;
+        width: 90%;
+        background: linear-gradient(to bottom, #8C0700, #1f1f1f);
+        z-index: 99;
+        position: absolute;
+        transition: opacity 1s ease;
+    }
+    #nav ul{
+        font-family: "Kaushan Script";
+        list-style: none;
+    }
+    #nav>ul li{
+        width: auto;
+    }
+    #nav a{
+        color: black;
+    }
+    #despliegue{
+        display: flex;
+        justify-self: flex-end;
+        border-radius: 1em;
+        background-color: #D3D3D3;
+        height: 4em;
+        width: 4em;
+    }
+    #despliegue:hover{
+        background-color: #808080;
+    }
+    #despliegue img{
+        align-self: center;
+        justify-self: center;
+        width: 3em;
+    }
+    a{
+        margin: 1em;
+        text-decoration: none;
+        color: black;
+    }
+    
+    /* Estilos main */
+    main{
+        grid-column: 1/5;
+        grid-row: 2;
+    }
+    h1, h2{
+        font-family: "Rampart One";
+    }
+    .informacion{
+            background: linear-gradient(to bottom, #CF0A00, #1f1f1f);
+            width: 90%;
+            height: auto;
+            margin: 3em auto;
+            display: grid;
+            grid-template-columns: repeat(4,.4fr);
+            border-radius: 1em;
+            opacity: .95;
+            font-family: 'OpenDyslexic', sans-serif;
+        }
+    
+    /* Estilos footer */
+    footer{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 4em;
+        text-align: center;
+        color: white;
+        background:linear-gradient(to bottom, #1f1f1f, black);
+        border-radius: 1em;
+        grid-column: 1/5;
+    }
+    footer p{
+        margin: 1em;
+    }
+    .btnFin, .btnFin>img{
+        border-radius: 100%;
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+    }
+    footer>a img{
+        width: 2em;
+    }
+    /* Estilos Index */
+    .informacion .bloqueInf1{
+        display: flex;
+        flex-direction: column;
+        grid-column: 1/5;
+        grid-row: 1;
+    }
+    .informacion #inf1{
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+
+    }
+    .informacion #img{
+        display: inline-block;
+        height: 20em;
+        width: 30em;
+        margin: 1em;
+        text-align: center;
+    }
+    #img img{
+        width:30vw;
+    }
+    #imgInfWhat{
+        display: flex;
+    }
+    #what {
+        display: none;
+    }
+    #imgWhat{
+        width: 1em;
+    }
+    .informacion #inf2{
+        margin: 2em;
+        grid-column: 1/5;
+        grid-row: 2;
+    }
+    .informacion #video{
+        height: 30vh;
+        width: 40vh;
+        justify-self: center;
+        align-self: center;
+        padding: 1em;
+        grid-column: 1/5;
+        grid-row: 3/4;
+    }
+    
+    /* Estilos Personas Relevantes */
+    .insta{
+        font-size: large;
+        justify-self: center;
+        align-self: center;
+        animation-name: rotarColores;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes rotarColores {
+        0%{color: yellow;}
+        25%{color: purple;}
+        50%{color: blue;}
+        75%{color: black;}
+        100%{color: yellow;}
+    }
+    #inf1PR{
+        margin: 1em;
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    #rrss1{
+        flex-direction: row;
+        grid-column: 3/5;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .imgPR img{
+        width: 20vw;
+        border: .2em solid;
+        border-image: linear-gradient(to bottom, black,#FA0C00 , black) 1;
+        transition: width 1s ease;
+    }
+    .imgPR img:hover{
+        width: 24vw;
+    }
+    .RRSS{
+        margin: 1em;
+        grid-column: 1;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .RRSS a{
+        font-size: large;
+        justify-self: center;
+        align-self: center;  
+    }
+    
+    .RRSS img{
+        width: 2em;
+    }
+    
+    #inf2PR{
+        margin: 1em;
+        grid-column: 3/5;
+        grid-row: 2;
+    }
+    #rrss2{
+        grid-column: 1/3;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+    }
+    #rrss2 .imgPR{
+        grid-column: 4;
+        grid-row: 1;
+    }
+    #rrss2 .RRSS{
+        grid-column: 1/3;
+    }
+    #inf3PR{
+        margin: 1em;
+        grid-column:1/3;
+        grid-row: 3;
+    }
+    #rrss3{
+        grid-column: 3/5;
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+    }
+    #rrss3 .imgPR{
+        grid-column: 4;
+        grid-row: 1;
+    }
+    #rrss3 .RRSS{
+        grid-column: 1/3;
+    }
+    
+    /* Estilos Lugares */
+    #lugares .informacion{
+        display: flex;
+        flex-direction: column;
+    }
+    .infL{
+        margin: 1em;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+    .infL>a img{
+        width: 40vw;
+        border: .2em solid;
+        border-image: linear-gradient(to bottom, black,#FA0C00 , black) 1;
+    }
+    .infL a{
+        justify-self: center;
+        align-self: center;
+    }
+    #vidLug{
+        text-align: center;
+        grid-column: 1/5;
+        grid-row: 3;
+    }
+    #vidLug video{
+        height: 10em;
+        width: 20em;
+        text-align: center;
+        justify-self: center;
+    }
+    
+    /* Estilo Contacto */
+    .contacto{
+        justify-self: center;
+        width: 43vw;
+        margin: 2em;
+        padding: 3em;
+        background: #ffffff;
+        border-radius: 1em;
+        grid-column: 1/6;
+        grid-row: 1/3;
+    }
+    
+    
+    label {
+        display: block;
+        margin: 1em 0 .3em;
+        color: #333333;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: .5em;
+        margin-top: .2em;
+        border: .2em solid #ccc;
+        border-radius: .2em;
+        transition: border-color 0.3s ease;
+    }
+    
+    input:focus,
+    textarea:focus {
+        border-color: #CF0A00;
+        outline: none;
+    }
+    
+    button {
+        width: 105%;
+        padding: .5em;
+        margin-top: 1em;
+        background-color: #CF0A00;
+        color: #ffffff;
+        border: none;
+        border-radius: .5em;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #8C0700;
+    }
+    @media print {
+        body {
+            background: none;
+            color: black;
+            font-family: "Oswald", sans-serif;
+        }
+    
+        header, footer {
+            background: none;
+            color: black;
+        }
+    
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Rampart One", sans-serif;
+            font-size: 1.3em;
+        }
+    
+        .permanent-marker-regular, 
+        .rampart-one-regular, 
+        .protest-revolution-regular, 
+        .kaushan-script-regular,
+        .oswald-oswald {
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+    
+        .informacion, 
+        .contacto {
+            background: none;
+            border: none;
+            padding: 1em;
+            margin: 0;
+            width: 100%;
+            font-family: 'OpenDyslexic', sans-serif;
+        }
+    
+        #video, 
+        #vidLug video {
+            display: none;
+        }
+    
+        img, 
+        .imgPR img {
+            max-width: 100%;
+            height: auto;
+            border: .2em solid #ccc;
+        }
+    
+        .informacion {
+            display: block;
+            grid-template-columns: none;
+            font-family: 'OpenDyslexic', sans-serif;
+        }
+    
+        .naveg {
+            display: none;
+        }
+    
+        .btnFin, .btnFin > img {
+            display: none;
+        }
+    
+        label, input, textarea, button {
+            font-size: 1.1em;
+            padding: .5em;
+            margin-top: .2em;
+        }
+    
+        button {
+            width: 100%;
+        }
+    
+        .contacto {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    
+        footer p {
+            font-size: 1em;
+        }
+    
+        .insta {
+            animation: none;
+        }
+    }
+    
+@media (min-width:768px) and (max-width:1299px) {
+    body{
+        background-image: url(../Recursos/DamaDelLago.jpg) ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: "oswald";
+        font-size: x-large;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: .2fr 2fr;
+    }
+        /* Estilos header*/
+    header{
+        background: linear-gradient(to bottom, #FA0C00, #8C0700);
+        border-radius: 1em;
+        grid-column: 1/5;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    #despliegue{
+        display: none;
+    }
+    .linkIni{
+        grid-column: 1;
+        justify-self: center;
+        text-align: center;
+        width: 10em;
+    }
+    .linkIni h1{
+        width: 10em;
+        text-align: center;
+        font-size: 1.4em;
+        font-family: "Permanent Marker";    
+    }
+    .naveg{
+        display: block;
+        grid-column: 2;
+        grid-row: 1;
+        
+    }
+    #nav{
+        opacity: 1;
+        width: 40vw;
+        margin: 1em;
+        border-radius: 1em;
+        background: none;
+        background-color: #8C0700;
+    }
+    #nav ul{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        list-style: none;
+        height: auto;
+    }
+    #nav a{
+        color: black;
+    }
+    a{
+        margin: 1em;
+        text-decoration: none;
+        color: black;
+    }
+    
+    /* Estilos main */
+    main{
+        grid-column: 1/5;
+        grid-row: 2;
+    }
+    h1, h2{
+        font-family: "Rampart One";
+    }
+    .informacion{
+        background: linear-gradient(to bottom, #CF0A00, #1f1f1f);
+            width: 90%;
+            height: auto;
+            margin: 3em auto;
+            display: grid;
+            grid-template-columns: repeat(4,22vw);
+            border-radius: 1em;
+            opacity: .95;
+            font-family: 'OpenDyslexic', sans-serif;
+        }
+    
+    /* Estilos footer */
+    footer{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 4em;
+        text-align: center;
+        color: white;
+        background:linear-gradient(to bottom, #1f1f1f, black);
+        border-radius: 1em;
+        grid-column: 1/5;
+    }
+    footer p{
+        margin: 1em;
+    }
+    .btnFin, .btnFin>img{
+        border-radius: 100%;
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+    }
+    footer>a img{
+        width: 2em;
+    }
+    /* Estilos Index */
+    .informacion .bloqueInf1{
+        display: grid;
+        grid-column: 1/5;
+        grid-row: 1;
+    }
+    .informacion #inf1{
+        width: 80vw;
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+    .informacion #img{
+        display: inline-block;
+        height: 25em;
+        margin: 1em;
+        grid-column: 4;
+        grid-row: 1;
+        text-align: center;
+    }
+    #img img{
+        width:35vw;
+    }
+    #imgInfWhat{
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+    }
+    #what {
+        display: block;
+        width: 10em;
+        align-self: center;
+        grid-column: 4;
+        grid-row: 1;
+        margin: 1em;
+    }
+    .informacion #inf2{
+        width: 80vw;
+        margin: 2em;
+        grid-column: 1/5;
+        grid-row: 2;
+    }
+    .informacion #video{
+        height: 30vw;
+        width: 40vw;
+        justify-self: center;
+        grid-column: 1/5;
+        grid-row: 4;
+    }
+    
+    /* Estilos Personas Relevantes */
+    .insta{
+        font-size: large;
+        justify-self: center;
+        align-self: center;
+        animation-name: rotarColores;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    @keyframes rotarColores {
+        0%{color: yellow;}
+        25%{color: purple;}
+        50%{color: blue;}
+        75%{color: black;}
+        100%{color: yellow;}
+    }
+    #inf1PR{
+        margin: 1em;
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    #rrss1{
+        flex-direction: row;
+        grid-column: 3/5;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .imgPR{
+        text-align: center;
+        margin: 1em;
+        grid-column: 3/4;
+    }
+    .imgPR img{
+        width: 10em;
+        border: .2em solid;
+        border-image: linear-gradient(to bottom, black,#FA0C00 , black) 1;
+    }
+    .RRSS{
+        margin: 1em;
+        grid-column: 1;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .RRSS a{
+        font-size: large;
+        justify-self: center;
+        align-self: center;  
+    }
+    
+    .RRSS img{
+        width: 2em;
+    }
+    
+    #inf2PR{
+        margin: 1em;
+        grid-column: 3/5;
+        grid-row: 2;
+    }
+    #rrss2{
+        grid-column: 1/3;
+        grid-row: 2;
+        display: flex;
+        flex-direction: column;
+    }
+    #rrss2 .imgPR{
+        grid-column: 4;
+        grid-row: 1;
+    }
+    #rrss2 .RRSS{
+        grid-column: 1/3;
+    }
+    #inf3PR{
+        margin: 1em;
+        grid-column:1/3;
+        grid-row: 3;
+    }
+    #rrss3{
+        grid-column: 3/5;
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+    }
+    #rrss3 .imgPR{
+        grid-column: 4;
+        grid-row: 1;
+    }
+    #rrss3 .RRSS{
+        grid-column: 1/3;
+    }
+    
+    /* Estilos Lugares */
+    #lugares .informacion{
+        display: flex;
+        flex-direction: column;
+    }
+    .infL{
+        margin: 1em;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+    .infL>a img{
+        width: 20em;
+        border: .2em solid;
+        border-image: linear-gradient(to bottom, black,#FA0C00 , black) 1;
+    }
+    .infL a{
+        justify-self: center;
+        align-self: center;
+    }
+    #vidLug{
+        text-align: center;
+        grid-column: 1/5;
+        grid-row: 3;
+    }
+    #vidLug video{
+        height: 10em;
+        width: 20em;
+        text-align: center;
+        justify-self: center;
+    }
+    
+    /* Estilo Contacto */
+    .contacto{
+        justify-self: center;
+        width: 100%;
+        max-width: 20em;
+        margin: 2em;
+        padding: 3em;
+        background: #ffffff;
+        border-radius: 1em;
+        grid-column: 1/5;
+        grid-row: 1/3;
+    }
+    
+    
+    label {
+        display: block;
+        margin: 1em 0 .3em;
+        color: #333333;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: .5em;
+        margin-top: .2em;
+        border: .2em solid #ccc;
+        border-radius: .2em;
+        transition: border-color 0.3s ease;
+    }
+    
+    input:focus,
+    textarea:focus {
+        border-color: #CF0A00;
+        outline: none;
+    }
+    
+    button {
+        width: 105%;
+        padding: .5em;
+        margin-top: 1em;
+        background-color: #CF0A00;
+        color: #ffffff;
+        border: none;
+        border-radius: .5em;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #8C0700;
+    }
+    
+}
+@media (min-width:1300px){
+body{
+    background-image: url(../Recursos/DamaDelLago.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "oswald";
+    font-size: x-large;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: .2fr 2fr;
+}
+    /* Estilos header*/
+header{
+    background: linear-gradient(to bottom, #FA0C00, #8C0700);
+    border-radius: 1em;
+    grid-column: 1/5;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1.5fr 0.5fr;
+}
+#despliegue{
+    display: none;
+}
+.linkIni{
+    justify-self: center;
+    grid-column: 1/6;
+    grid-row: 1;
+    width: 10em;
+    animation-name: moverTitulo;
+    animation-duration: 1s;
+}
+.linkIni h1{
+    width: 10em;
+    text-align: left;
+    font-size: x-large;
+    font-family: "Permanent Marker";    
+    transition: font-size 1s ease;
+}
+.linkIni h1:hover{
+    font-size: xx-large;
+}
+@keyframes moverTitulo{
+    0% {
+        transform: translateX(-40vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.naveg{
+    grid-column: 1/5;
+    grid-row: 2;
+}
+.naveg #nav{
+    display: block;
+    opacity: 1;
+    background: none;
+    background-color: transparent;
+}
+#nav ul{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    list-style: none;
+    
+}
+#nav>ul>li a{
+    color: black;
+}
+a{
+    margin: 1em;
+    text-decoration: none;
+    color: black;
+}
+.link{
+    font-size: x-large;
+    transition: transform 1s ease;
+}
+.link:hover{
+    transform: scale(1.5);
+}
+
+/* Estilos main */
+main{
+    grid-column: 1/5;
+    grid-row: 2;
+}
+h1, h2{
+    font-family: "Rampart One";
+}
+.informacion{
+    background: linear-gradient(to bottom, #CF0A00, #1f1f1f);
+        width: 90%;
+        height: auto;
+        margin: 3em auto;
+        display: grid;
+        grid-template-columns: repeat(4,.8fr);
+        grid-template-rows: repeat(3,.5fr);
+        border-radius: 1em;
+        opacity: .95;
+        font-family: 'OpenDyslexic', sans-serif;
+    }
+
+/* Estilos footer */
+footer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 4em;
+    text-align: center;
+    color: white;
+    background:linear-gradient(to bottom, #1f1f1f, black);
+    border-radius: 1em;
+    grid-column: 1/5;
+}
+footer p{
+    margin: 1em;
+}
+.btnFin, .btnFin>img{
+    border-radius: 100%;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+}
+footer>a img{
+    width: 2em;
+}
+/* Estilos Index */
+.informacion>.bloqueInf1{
+    display: flex;
+    flex-direction: row;
+    grid-column: 1/5;
+    grid-row: 1;
+}
+.bloqueInf1 #inf1{
+    margin: 1em;
+    grid-column: 1/5;
+    grid-row: 1/2;
+}
+.informacion #img{
+    margin: 1em;
+    grid-column: 3;
+    grid-row: 1;
+    text-align: center;
+}
+#img img{
+    width:10em;
+}
+#imgInfWhat{
+    width: 40vw;
+    grid-column: 5;
+    display: flex;
+    flex-direction: row;
+}
+#what {
+    width: 20vw;
+    align-self: flex-start;
+    display: block;
+    margin: 1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#what:hover{
+    opacity: 1;
+}
+#img:hover + #what{
+    opacity: 1;
+}
+.informacion #inf2{
+    width: 85vw;
+    margin: 1em;
+    grid-column: 1/5;
+    grid-row: 2/3;
+}
+.informacion #video{
+    height: 20vw;
+    width: 50vw;
+    justify-self: center;
+    align-self: center;
+    padding: 1em;
+    grid-column: 1/5;
+    grid-row: 3/4;
+}
+
+/* Estilos Personas Relevantes */
+.insta{
+    font-size: large;
+    justify-self: center;
+    align-self: center;
+    animation-name: rotarColores;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotarColores {
+    0%{color: yellow;}
+    25%{color: purple;}
+    50%{color: blue;}
+    75%{color: black;}
+    100%{color: yellow;}
+}
+#inf1PR{
+    margin: 1em;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+#rrss1{
+    flex-direction: row;
+    grid-column: 3/5;
+    grid-row: 1;
+    display: flex;
+}
+.imgPR{
+    text-align: center;
+    margin: 1em;
+    grid-column: 3/4;
+}
+.imgPR img{
+    width: 20vw;
+    border: .2em solid;
+    border-image: linear-gradient(to bottom, black,#FA0C00 , black) 1;
+    transition: width 1s ease;
+}
+.imgPR img:hover{
+    width: 24vw;
+}
+.RRSS{
+    margin: 1em;
+    grid-column: 1;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.RRSS a{
+    font-size: large;
+    justify-self: center;
+    align-self: center;  
+}
+
+.RRSS img{
+    width: 2em;
+}
+
+#inf2PR{
+    margin: 1em;
+    grid-column: 3/5;
+    grid-row: 2;
+}
+#rrss2{
+    grid-column: 1/3;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+#rrss2 .imgPR{
+    grid-column: 4;
+    grid-row: 1;
+}
+#rrss2 .RRSS{
+    grid-column: 1/3;
+}
+#inf3PR{
+    margin: 1em;
+    grid-column:1/3;
+    grid-row: 3;
+}
+#rrss3{
+    grid-column: 3/5;
+    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+}
+#rrss3 .imgPR{
+    grid-column: 4;
+    grid-row: 1;
+}
+#rrss3 .RRSS{
+    grid-column: 1/3;
+}
+
+/* Estilos Lugares */
+#lugares .informacion{
+    display: grid;
+    grid-template-columns: repeat(3,30vw);
+}
+.infL{
+    margin: 1em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.infL:first-of-type{
+    grid-column: 1;
+    grid-row: 1/3;
+}
+.infL:nth-of-type(2){
+    margin: 2em;
+    grid-column: 2;
+    grid-row: 1/3;
+}
+.infL:last-of-type{
+    grid-column: 3;
+    grid-row: 1/3;
+}
+.infL>a img{
+    width: 20vw;
+    border: .2em solid;
+    border-image: linear-gradient(to bottom, black,#FA0C00 , black) 1;
+}
+.infL a{
+    justify-self: center;
+    align-self: center;
+}
+#vidLug{
+    text-align: center;
+    grid-column: 1/5;
+    grid-row: 3;
+}
+#vidLug video{
+    height: 15em;
+    width: 30em;
+    text-align: center;
+    justify-self: center;
+}
+
+/* Estilo Contacto */
+.contacto{
+    justify-self: center;
+    width: 100%;
+    max-width: 40em;
+    margin: 2em;
+    padding: 3em;
+    background: #ffffff;
+    border-radius: 1em;
+    grid-column: 2/4;
+    grid-row: 1/3;
+}
+
+
+label {
+    display: block;
+    margin: 1em 0 .3em;
+    color: #333333;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: .5em;
+    margin-top: .2em;
+    border: .2em solid #ccc;
+    border-radius: .2em;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #CF0A00;
+    outline: none;
+}
+
+button {
+    width: 105%;
+    padding: .5em;
+    margin-top: 1em;
+    background-color: #CF0A00;
+    color: #ffffff;
+    border: none;
+    border-radius: .5em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8C0700;
+}
+}
