@@ -60,7 +60,7 @@
     margin: 0;
 }
 body{
-        background-image: url(../Recursos/DamaDelLago.jpg) ;
+        background-image: url(../recursos/DamaDelLago.jpg) ;
         background-repeat: no-repeat;
         background-size: cover;
         font-family: "oswald";
@@ -499,7 +499,7 @@ body{
     
 @media (min-width:768px) and (max-width:1299px) {
     body{
-        background-image: url(../Recursos/DamaDelLago.jpg) ;
+        background-image: url(../recursos/DamaDelLago.jpg) ;
         background-repeat: no-repeat;
         background-size: cover;
         font-family: "oswald";
@@ -843,7 +843,7 @@ body{
 }
 @media (min-width:1300px){
 body{
-    background-image: url(../Recursos/DamaDelLago.jpg) ;
+    background-image: url(../recursos/DamaDelLago.jpg) ;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: "oswald";
