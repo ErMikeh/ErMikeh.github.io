@@ -114,7 +114,7 @@ body{
         width: auto;
     }
     #nav a{
-        color: black;
+        color: #BABABA;
     }
     #despliegue{
         display: flex;
@@ -555,7 +555,8 @@ body{
         height: auto;
     }
     #nav a{
-        color: black;
+        color: #BABABA;
+
     }
     a{
         margin: 1em;
@@ -891,6 +892,7 @@ header{
     }
 }
 .naveg{
+
     grid-column: 1/5;
     grid-row: 2;
 }
