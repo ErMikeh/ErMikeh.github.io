@@ -114,7 +114,7 @@ body{
         width: auto;
     }
     #nav a{
-        color: black;
+        color: #BABABA;
     }
     #despliegue{
         display: flex;
@@ -554,7 +554,7 @@ body{
         height: auto;
     }
     #nav a{
-        color: black;
+        color: #BABABA;
 
     }
     a{
