@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /fuentes/
+Disallow: /recursos/
+Disallow: /JS/
+Disallow: /CSS/
+Sitemap: https://ermikeh.github.io/sitemap.xml
