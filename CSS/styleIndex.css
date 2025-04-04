@@ -4,3 +4,21 @@
     box-sizing: border-box;
     background-color: #F8FBF8;
 }
+
+header{
+    background-color: #F8FBF8;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#menu{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+#menu li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
