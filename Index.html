@@ -13,6 +13,15 @@
     <!-- Links Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <!-- Links leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 </head>
 <body>
     <header>
@@ -89,7 +98,39 @@
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 Ortopedia Tirón. Todos los derechos reservados.</p>
+        <div class="contenidoFooter">
+            <div id="footerData">
+                <table id="tablaFooter">
+                    <tr>
+                        <td>Horario:</td>
+                        <td>Lunes-Viernes: 9:30-13:30 / 17:00-20:00</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Sabados: 10:00-13:30</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Domingos: Cerrado</td>
+                    </tr>
+                    <tr>
+                        <td>Dirección:</td>
+                        <td>Avenida de La Rioja, 23, 26200 Haro, La Rioja</td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono:</td>
+                        <td>+34 691 700 663</td>
+                    </tr>
+                    <tr>
+                        <td>WhatsApp:</td>
+                        <td>+34 691 700 663</td>
+                    </tr>
+                </table>
+                <div id="map"></div>
+            </div>
+            <p>&copy; 2025 Ortopedia Tirón. Todos los derechos reservados.</p>
+        </div>
+        <!-- Imagen instagram siempre abajo -->
         <p id="instagram"><a href="https://www.instagram.com/ortopediatiron?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="70" viewBox="0 0 30 30"
             style="fill:#2e8b8b;">

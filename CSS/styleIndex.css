@@ -235,6 +235,9 @@
         transform: rotateY(180deg);
         color: black;
       }
+      .tarjeta-delante{
+        padding-top: 1em;
+      }
 
       #tarjetaConsultas .tarjeta-delante{
         background-image: url(../RecursosAudiovisuales/Images/futuro-de-la-fisioterapia-jfisio.PNG);
@@ -259,5 +262,23 @@
         display: flex;
         align-items: center;
         color: white;
+    }
+    /* Estilo datos footer */
+    #footerData{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1vw;
+    }
+    #map{
+        height: 10vh;
+    }
+    #tablaFooter{
+        width: 40vw;
+        border-collapse: collapse;
+        margin: auto;
+    }
+    #tablaFooter td {
+      margin: 1em 0;
     }
 }
