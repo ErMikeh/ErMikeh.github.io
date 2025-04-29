@@ -35,7 +35,6 @@ body{
 /* Menu */
 .navbar {
   width: 100%;
-  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
 }
 
 .nav-container {
@@ -59,10 +58,6 @@ body{
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
-}
-
-.navbar .nav-container a:hover{
-    font-weight: bolder;
 }
 
 .nav-container {
@@ -140,22 +135,21 @@ body{
     transform: translateX(0);
   }
 
-.nav-container input[type="checkbox"]:checked ~ .menu-items {
-  transform: translateX(0);
-}
+    .nav-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+    }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-  transform: rotate(45deg);
-}
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+    }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-  transform: scaleY(0);
-}
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+    }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-  transform: rotate(-45deg);
-}
-/* Diseño menú */
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+    }
 /* Estilos header generales */
 header{
     background: linear-gradient(to top, #F8FBF8, #9AD1C5);
@@ -417,70 +411,6 @@ margin: 1em 0;
 }
 
 @media (min-width: 768px){
-    /* Estilos header generales */
-    header{
-        background: linear-gradient(to top, #F8FBF8, #9AD1C5);
-        padding: 1vw;
-        display: flex;
-        justify-content: space-between;
-    }
-    #enlaceLogoNav{
-        text-decoration: none;
-        border-radius: 25%;
-    }
-    #enlaceLogoNav img{
-        height: 8vh;
-        border-radius: 25%;
-        mix-blend-mode: multiply;
-    }
-
-    nav{
-        display: block;
-        background-color: transparent;
-    }
-    #menu {
-        display: flex;
-        gap: 2em;
-        align-items: start;
-        list-style-type: none;
-    }
-
-    #menu li {
-    padding: 6px 0;
-    }
-
-    #menu li a {
-    position: relative;
-    display: block;
-    padding: 4px 0;
-    font-family: Lato, sans-serif;
-    color: #000000;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.5s;
-    }
-
-    #menu li a::after {
-    position: absolute;
-    content: "";
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #29AC86;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s;
-    }
-
-    #menu li a:hover {
-    color: #2E8B8B;
-    }
-
-    #menu li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-    }
 
     /* Estilos main generales */
     main{
@@ -679,75 +609,42 @@ margin: 1em 0;
 }
 
 @media (min-width:1030px){
+    /* Quitar hamburguesa */
+    .navbar {
+        width: 100%;
+    }
     
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: auto;
+    }
+    .hamburger-lines,
+    .checkbox {
+        display: none !important;
+    }
+
+    .navbar .menu-items {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-end;
+        align-items: center;
+        height: auto !important;
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: none !important;
+        transform: none !important;
+        z-index: auto !important;
+      }
+
     .InfoMoviles{
         display: none;
     }
-    /* Estilos header generales */
-    header{
-        background: linear-gradient(to top, #F8FBF8, #9AD1C5);
-        padding: 1vw;
-        display: flex;
-        justify-content: space-between;
-    }
-    #enlaceLogoNav{
-        text-decoration: none;
-        border-radius: 25%;
-    }
-    #enlaceLogoNav img{
-        height: 8vh;
-        border-radius: 25%;
-        mix-blend-mode: multiply;
-    }
-
-    nav{
-        display: block;
-        background-color: transparent;
-    }
-    #menu {
-        display: flex;
-        gap: 2em;
-        align-items: start;
-        list-style-type: none;
-    }
-    
-    #menu li {
-    padding: 6px 0;
-    }
-
-    #menu li a {
-    position: relative;
-    display: block;
-    padding: 4px 0;
-    font-family: Lato, sans-serif;
-    color: #000000;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.5s;
-    }
-
-    #menu li a::after {
-    position: absolute;
-    content: "";
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #29AC86;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s;
-    }
-
-    #menu li a:hover {
-    color: #2E8B8B;
-    }
-
-    #menu li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-    }
-
+   
     /* Estilos main generales */
     main{
         justify-content: center;
