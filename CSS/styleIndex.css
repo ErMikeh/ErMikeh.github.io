@@ -243,7 +243,7 @@ main{
     filter: drop-shadow(0 0 0.75rem #29AC86);
 }
 .carousel-item img{
-    height: 30vh;
+    height: 30vw;
 }
 #pieCarrusel{
     text-align: center;
@@ -276,7 +276,7 @@ main{
 /* Imagenes de los contenidos principaes */
 .imagenContenido img{
     width: 25dvw;
-    height: 15dvh;
+    height: 15dvw;
     border-radius: 25%;
     animation-name: fadeIn;
     animation-duration: 1s;
@@ -440,7 +440,7 @@ margin: 1em 0;
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
     .carousel-item img{
-        height: 30vh;
+        height: 30vw;
     }
     #pieCarrusel{
         text-align: center;
@@ -473,7 +473,7 @@ margin: 1em 0;
     /* Imagenes de los contenidos principaes */
     .imagenContenido img{
         width: 25dvw;
-        height: 15dvh;
+        height: 15dvw;
         border-radius: 25%;
         animation-name: fadeIn;
         animation-duration: 1s;
@@ -671,7 +671,7 @@ margin: 1em 0;
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
     .carousel-item img{
-        height: 90vh;
+        height: 30vw;
     }
     #pieCarrusel{
         text-align: center;
@@ -708,7 +708,7 @@ margin: 1em 0;
     }
     .imagenContenido img{
         width: 25dvw;
-        height: 35dvh;
+        height: 15dvw;
         border-radius: 25%;
         animation-name: fadeIn;
         animation-duration: 1s;
