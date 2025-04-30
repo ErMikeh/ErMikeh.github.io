@@ -315,7 +315,6 @@ main{
 .tarjetas{
     grid-column: 1/4;
     display:flex;
-    justify-content: space-around;
     margin: 4vh;
 }
 .tarjetas h3{
@@ -323,10 +322,11 @@ main{
     text-align: center;
 }
 .tarjeta {
-    width: 25vw;
-    height: 30vw;
+    width: 40vw;
+    height: 54vw;
     perspective: 1000px;
     filter: drop-shadow(0 0 0.75rem #29AC86);
+    margin: 6vw;
 }
 
 .tarjeta-inner {
@@ -357,11 +357,13 @@ main{
 
 /* Estilo para ambas caras */
 .tarjeta-detras {
+    text-align: left;
     padding: 1em;
     box-shadow: 1px 1px 4px 4px #29AC86;
     filter: none;
     transform: rotateY(180deg);
     color: black;
+    font-size: 3vw;
 }
 .tarjeta-delante{
     flex-direction: column;
@@ -455,7 +457,7 @@ footer{
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
     .carousel-item img{
-        height: 35vw;
+        height: 40vw;
     }
     /* Contenedor para el contenido principal general */
     #contenedorContenidoPrincipal{
@@ -475,7 +477,7 @@ footer{
     }
     .contenidoPrincipal p{
         justify-self: center;
-        font-size: 3vw;
+        font-size: 2vw;
         text-align: left;
     }
     
