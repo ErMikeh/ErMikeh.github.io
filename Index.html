@@ -114,36 +114,40 @@
     <footer>
         <div class="contenidoFooter">
             <div id="footerData">
-                <table id="tablaFooter">
-                    <tr>
-                        <td>Horario:</td>
-                        <td>Lunes-Viernes:</td>
-                        <td>9:30-13:30 / 17:00-20:00</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Sabados:</td>
-                        <td> 10:00-13:30</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Domingos: </td>
-                        <td>Cerrado</td>
-                    </tr>
-                    <tr>
-                        <td>Dirección:</td>
-                        <td colspan="2">Avenida de La Rioja, 23, 26200 Haro, La Rioja</td>
-                    </tr>
-                    <tr>
-                        <td>Teléfono:</td>
-                        <td colspan="2">+34 691 700 663</td>
-                    </tr>
-                    <tr>
-                        <td>WhatsApp:</td>
-                        <td colspan="2">+34 691 700 663</td>
-                    </tr>
-                </table>
-                <div id="map"></div>
+                <div>
+                    <table id="tablaFooter">
+                        <tr>
+                            <td>Horario:</td>
+                            <td>Lunes-Viernes:</td>
+                            <td>9:30-13:30 / 17:00-20:00</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Sabados:</td>
+                            <td> 10:00-13:30</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Domingos: </td>
+                            <td>Cerrado</td>
+                        </tr>
+                        <tr>
+                            <td>Dirección:</td>
+                            <td colspan="2">Avenida de La Rioja, 23, 26200 Haro, La Rioja</td>
+                        </tr>
+                        <tr>
+                            <td>Teléfono:</td>
+                            <td colspan="2">+34 691 700 663</td>
+                        </tr>
+                        <tr>
+                            <td>WhatsApp:</td>
+                            <td colspan="2">+34 691 700 663</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="contenedorMapa">
+                    <div id="mapa" style="height: 40vh; margin: 3vw auto;"></div>
+                </div>
             </div>
             <p>&copy; 2025 Ortopedia Tirón. Todos los derechos reservados.</p>
         </div>
@@ -155,5 +159,18 @@
             </svg>
         </a></p>
     </footer>
+    <script>
+        // 1. Crear el mapa centrado en unas coordenadas
+        var mapa = L.map('mapa').setView([42.57507, -2.8511], 16);
+        // 2. Añadir los tiles (el fondo del mapa)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(mapa);
+        L.marker([42.57507, -2.8511])
+        .addTo(mapa)
+        .bindPopup('Avenida de La Rioja, 23<br>26200 Haro, La Rioja')
+        .openPopup();
+      </script>
+      
 </body>
 </html>
