@@ -195,7 +195,6 @@ transition: 0.5s;
 
 #menu li a::after {
 position: absolute;
-content: "";
 top: 100%;
 left: 0;
 width: 100%;
@@ -220,11 +219,8 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    background-color: rgba(red, green, blue, alpha);
 }
-.contenedorPrincipal{
-    padding: 2em;
-}
+
 #imagenPrincipal{
     text-align: center;
     width: 100%;
@@ -234,16 +230,21 @@ main{
     animation-timing-function: ease-in;
 }
 #imagenPrincipal img{
+    width: 100%;
     margin: auto;
+}
+.contenedorPrincipal{
+    padding: 1em;
 }
 /* Estilos imagenes carrusel */
 #carouselExampleSlidesOnly{
     margin: auto;
-    width: 60vw;
+    width: 100%;
     filter: drop-shadow(0 0 0.75rem #29AC86);
 }
 .carousel-item img{
-    height: 30vw;
+    width: 100%;
+    height: 60vw;
 }
 #pieCarrusel{
     text-align: center;
@@ -257,6 +258,7 @@ main{
     grid-template-rows: auto;
     text-align: center;
     row-gap: 2vh;
+    padding: 2vw;
 }
 
 /* Contenedores para el contenido */
@@ -264,31 +266,34 @@ main{
     grid-column: 1/4;
     grid-row: auto;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 50% 50%;
     grid-template-rows: auto;
 }
 .contenidoPrincipal p{
     justify-self: center;
-    font-size: 1.5vw;
+    font-size: 3vw;
     text-align: left;
 }
 
 /* Imagenes de los contenidos principaes */
 .imagenContenido img{
-    width: 25dvw;
-    height: 15dvw;
-    border-radius: 25%;
+    width:40vw;
+    height: 30vw;
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-timing-function: ease-in;
 }
 
 /* Primer contenido */
+#imgCont1,
+#imgCont2{
+    align-content: center;
+}
 #contenido1 {
-    grid-column: 1 / 3;
+    grid-column: 1 / 2;
 }
 #contenido1 h3{
-    font-size: 3vw;
+    font-size: 5vw;
     text-align: left;
     border-bottom: #2E8B8B solid 2px;
 }
@@ -300,7 +305,7 @@ main{
     grid-row: 1 / 2;
 }
 #contenido2 h3{
-    font-size: 3vw;
+    font-size: 5vw;
     text-align: right;
     border-bottom: #2E8B8B solid 2px;
 }
@@ -311,6 +316,10 @@ main{
     display:flex;
     justify-content: space-around;
     margin: 4vh;
+}
+.tarjetas h3{
+    font-size: 3vw;
+    text-align: center;
 }
 .tarjeta {
     width: 25vw;
@@ -396,18 +405,18 @@ footer{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 1vw;
 }
 #map{
     height: 10vh;
 }
 #tablaFooter{
-    width: 40vw;
+    font-size: small;
+    width: 60vw;
     border-collapse: collapse;
-    margin: auto;
+    margin-left: 2vw;
 }
 #tablaFooter td {
-margin: 1em 0;
+margin: 1em;
 }
 
 @media (min-width: 768px){
@@ -417,7 +426,6 @@ margin: 1em 0;
         justify-content: center;
         align-items: center;
         flex-direction: column; 
-        background-color: rgba(red, green, blue, alpha);
     }
     .contenedorPrincipal{
         padding: 2em;
@@ -474,7 +482,6 @@ margin: 1em 0;
     .imagenContenido img{
         width: 25dvw;
         height: 15dvw;
-        border-radius: 25%;
         animation-name: fadeIn;
         animation-duration: 1s;
         animation-timing-function: ease-in;
@@ -511,7 +518,7 @@ margin: 1em 0;
     }
     .tarjeta {
         width: 25vw;
-        height: 30vh;
+        height: 40vh;
         perspective: 1000px;
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
@@ -650,7 +657,6 @@ margin: 1em 0;
         justify-content: center;
         align-items: center;
         flex-direction: column; 
-        background-color: rgba(red, green, blue, alpha);
     }
     .contenedorPrincipal{
         padding: 2em;
