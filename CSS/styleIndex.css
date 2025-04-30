@@ -604,7 +604,8 @@ footer{
         height: 100%;
     }
     #contenedorMapa{
-        width: 100%;
+        margin: auto;
+        width: 60%;
         grid-column: 2/4;
         grid-row: 1/2;
     }
