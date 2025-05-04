@@ -1,6 +1,8 @@
+import * as gestionContacto from './GestionContacto.js';
 window.onload = function() {
     gestionAnimacion();
     crearMapa();
+    
     console.log("La página ha cargado completamente.");
 }
 
