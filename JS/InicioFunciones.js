@@ -1,4 +1,10 @@
 window.onload = function() {
+    gestionAnimacion();
+    crearMapa();
+    console.log("La página ha cargado completamente.");
+}
+
+function gestionAnimacion() {
     const animacion = document.getElementById('animacion');
     const pagina = document.getElementById('pagina');
     if (!obtenerCookie('primeraEntrada')) {
@@ -16,13 +22,6 @@ window.onload = function() {
         animacion.style.display = 'none';
         pagina.style.display = 'block';
     }
-
-    crearMapa();
-    console.log("La página ha cargado completamente.");
-}
-
-function lanzarAnimacion() {
-
 }
 
 function obtenerCookie(nombre) {
