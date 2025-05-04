@@ -1,0 +1,394 @@
+/* Fuentes a usar */
+
+.montserrat-normal {
+    font-family: "Montserrat";
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  .dosis-Titulo {
+    font-family: "Dosis";
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+/* Estilos generales */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #F8FBF8;
+}
+
+/* Estilos para el div de la animación */
+video{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+/* Menu */
+.navbar {
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  right: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    padding-top: 120px;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to top, #F8FBF8, #9AD1C5);
+    transform: translateX(150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+    z-index: 3;
+  }
+  
+  .nav-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+
+    .nav-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+    }
+
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+    }
+
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+    }
+
+    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+    }
+/* Estilos header generales */
+header{
+    background: linear-gradient(to top, #F8FBF8, #9AD1C5);
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+}
+#enlaceLogoNav{
+    text-decoration: none;
+    border-radius: 25%;
+}
+#enlaceLogoNav img{
+    height: 8vh;
+    border-radius: 25%;
+    mix-blend-mode: multiply;
+}
+
+nav{
+    display: block;
+    background-color: transparent;
+}
+
+#menu {
+    display: flex;
+    gap: 2em;
+    align-items: start;
+    list-style-type: none;
+}
+
+#menu li {
+    padding: 6px 0;
+}
+
+#menu li a {
+    position: relative;
+    display: block;
+    padding: 4px 0;
+    font-family: Lato, sans-serif;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+#menu li a::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #29AC86;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+#menu li a:hover {
+    color: #2E8B8B;
+}
+
+#menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Estilos main generales */
+main{
+
+    align-items: center;
+    justify-content: center;
+    padding: 2vw;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+/* Estilos tabla formulario */
+#formuContacto{
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    width: 80%;
+    justify-self: center;
+    box-shadow: 0 0 0.75rem #29AC86;
+}
+#tablaFormulario{
+    margin: auto 1vw;
+    border-collapse: collapse;
+    padding: 2vw;
+}
+#tablaFormulario tr{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 1vh 0;
+}
+.rellenar{
+    width: 100%;
+    height: 100%;
+    padding: 1vw;
+    border-radius: 10px;
+    border: 1px solid #0e2431;
+    background-color: #F8FBF8;
+}
+/* Estilo para botones de redes sociales */
+#instagram{
+    position: fixed;
+    bottom: 1px;
+    right: 10px;
+    z-index: 1000;
+}
+/* Estilos footer generales */
+footer{
+    margin-top: auto;
+    background: black;
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+/* Estilo datos footer */
+.contenidoFooter{
+    width: 100%;
+    height: 100%;
+}
+#footerData{
+    width: 100%;
+    height: 100%;
+}
+#contenedorMapa{
+    margin: auto;
+    width: 60%;
+    grid-column: 2/3;
+    grid-row: 1;
+}
+#tablaFooter{
+    grid-column: 1;
+    width: 40vw;
+    border-collapse: collapse;
+    margin: auto;
+}
+#tablaFooter td {
+    vertical-align: top;
+    padding: 1vw 0;
+}
+
+@media (min-width:1030px){
+    /* Estilos para el div de la animación */
+    video{
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* ¡BOOM! */
+        display: block;
+    }
+    /* Quitar hamburguesa */
+    .navbar {
+        width: 100%;
+    }
+    
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: auto;
+    }
+    .hamburger-lines,
+    .checkbox {
+        display: none !important;
+    }
+
+    .navbar .menu-items {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-end;
+        align-items: center;
+        height: auto !important;
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: none !important;
+        transform: none !important;
+        z-index: auto !important;
+      }
+
+   
+    /* Estilo para botones de redes sociales */
+    #instagram{
+        position: fixed;
+        bottom: 1px;
+        right: 10px;
+        z-index: 1000;
+    }
+    /* Estilos footer generales */
+    footer{
+        margin-top: auto;
+        background: black;
+        padding: 1vw;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+    /* Estilo datos footer */
+    .contenidoFooter{
+        width: 100%;
+        height: 100%;
+    }
+    #footerData{
+        display: grid;
+        grid-template-columns: 50% 25% 25%;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+    #contenedorMapa{
+        width: 100%;
+        grid-column: 2/3;
+        grid-row: 1;
+    }
+    #tablaFooter{
+        grid-column: 1;
+        width: 40vw;
+        border-collapse: collapse;
+        margin: auto;
+    }
+    #tablaFooter td {
+        padding: 1vh 0;
+    }
+}

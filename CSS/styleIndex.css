@@ -18,6 +18,10 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
 *{
     margin: 0;
     padding: 0;
@@ -29,7 +33,12 @@ body{
     flex-direction: column;
     background-color: #F8FBF8;
 }
-
+/* Estilos para el div de la animación */
+video{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
 /* Menu */
 .navbar {
   width: 100%;
@@ -424,6 +433,7 @@ footer{
     margin: auto;
 }
 #tablaFooter td {
+    vertical-align: top;
     padding: 1vw 0;
 }
 
@@ -619,6 +629,13 @@ footer{
 }
 
 @media (min-width:1030px){
+    /* Estilos para el div de la animación */
+    video{
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* ¡BOOM! */
+        display: block;
+    }
     /* Quitar hamburguesa */
     .navbar {
         width: 100%;
