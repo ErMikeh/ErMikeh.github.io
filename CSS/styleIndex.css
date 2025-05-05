@@ -284,10 +284,11 @@ main{
 /* Imagenes de los contenidos principaes */
 .imagenContenido img{
     width:40vw;
-    height: 30vw;
+    height: 25vw;
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-timing-function: ease-in;
+    box-shadow: #29AC86 0 0 0.75rem;
 }
 
 /* Primer contenido */
@@ -493,10 +494,11 @@ footer{
     /* Imagenes de los contenidos principaes */
     .imagenContenido img{
         width:40vw;
-        height: 30vw;
+        height: 25vw;
         animation-name: fadeIn;
         animation-duration: 1s;
         animation-timing-function: ease-in;
+        box-shadow: #29AC86 0 0 0.75rem;
     }
     /* Primer contenido */
     #contenido1 h3{
@@ -720,11 +722,13 @@ footer{
 
     /* Imagenes de los contenidos principaes */
     .imagenContenido img{
-        width:20vw;
-        height: 15vw;
+        width:100%;
+        height: 100%;
         animation-name: fadeIn;
         animation-duration: 1s;
         animation-timing-function: ease-in;
+        border-radius: 5px;
+        box-shadow: #29AC86 0 0 0.75rem;
     }
     /* Primer contenido */
     #contenido1 {

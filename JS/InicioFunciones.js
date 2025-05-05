@@ -33,8 +33,10 @@ function gestionHamburguesaYMapa(){
     const hamburguesa=document.getElementById('despliegueMenu');
     const mapa=document.getElementById('contenedorMapa');
     if(hamburguesa.checked){
+        document.body.style.overflow = 'hidden';
         mapa.style.position='fixed';
     }else{
+        document.body.style.overflow = 'auto';
         mapa.style.position='static';
     }
 }   

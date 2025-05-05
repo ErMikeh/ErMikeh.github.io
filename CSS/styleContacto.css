@@ -266,6 +266,25 @@ main{
     border: 1px solid #0e2431;
     background-color: #F8FBF8;
 }
+
+/* Estilo boton de enviar */
+#tdEnviar{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 1vw 0;
+}
+#enviar{
+    background-color: #29AC86;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
 /* Estilo para botones de redes sociales */
 #instagram{
     position: fixed;
