@@ -1,18 +1,3 @@
-/* Fuentes a usar */
-
-.montserrat-normal {
-    font-family: "Montserrat";
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-  }
-
-  .dosis-Titulo {
-    font-family: "Dosis";
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-  }
 /* Estilos generales */
 @keyframes fadeIn {
     0% { opacity: 0; }
@@ -65,12 +50,6 @@ video{
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
-}
-
-.nav-container {
-  display: block;
-  position: relative;
-  height: 60px;
 }
 
 .nav-container .checkbox {
@@ -137,10 +116,6 @@ video{
     text-align: center;
     z-index: 3;
   }
-  
-  .nav-container input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(0);
-  }
 
     .nav-container input[type="checkbox"]:checked ~ .menu-items {
     transform: translateX(0);
@@ -174,10 +149,6 @@ header{
     mix-blend-mode: multiply;
 }
 
-nav{
-    display: block;
-    background-color: transparent;
-}
 
 #menu {
     display: flex;
@@ -446,11 +417,6 @@ footer{
 @media (min-width: 768px){
 
     /* Estilos main generales */
-    main{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; 
-    }
     .contenedorPrincipal{
         padding: 2em;
     }

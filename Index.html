@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortopedia Tirón</title>
-
-    <!-- Imagen de pestaña -->
-    <link rel="shortcut icon" href="RecursosAudiovisuales/Images/ORTOPEDIATIRON_LOGO.webp"> 
-
-    <!-- Links para las fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <!-- Links Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-
-    <!-- Links leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-
-    <!-- Estilo personal -->
-    <link rel="stylesheet" href="CSS/styleIndex.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ortopedia Tirón</title>
+      
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="RecursosAudiovisuales/Images/ORTOPEDIATIRON_LOGO.webp">
+      
+        <!-- Preconnect para Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+      
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+      
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="CSS/styleIndex.css">
+      
+        <!-- Scripts con defer (mejor en el body si no es esencial para <head>) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" defer integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+      </head>
 <body>
     <div id="animacion">
         <video autoplay muted>
@@ -67,13 +66,13 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                              <img src="RecursosAudiovisuales/Images/Ortopedia_Fuera.webp" class="d-block" alt="Ortopedia Tirón local por fuera">
+                              <img src="RecursosAudiovisuales/Images/Ortopedia_Fuera.webp" alt="Ortopedia Tirón local por fuera">
                             </div>
                             <div class="carousel-item">
-                              <img src="RecursosAudiovisuales/Images/Ortopedia_Dentro_Principal.webp" class="d-block " alt="Entrada principal Ortopedia Tirón">
+                              <img src="RecursosAudiovisuales/Images/Ortopedia_Dentro_Principal.webp"  alt="Entrada principal Ortopedia Tirón" loading="lazy">
                             </div>
                             <div class="carousel-item">
-                              <img src="RecursosAudiovisuales/Images/Ortopedia_Dentro_Pasillo.webp" class="d-block" alt="Pasillo Ortopedia Tirón">
+                              <img src="RecursosAudiovisuales/Images/Ortopedia_Dentro_Pasillo.webp"  alt="Pasillo Ortopedia Tirón" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -168,12 +167,18 @@
                 <p>&copy; 2025 Ortopedia Tirón. Todos los derechos reservados. <a class="politicaPrivacidad" href="javascript:void(0)">Política de Privacidad</a></p>
             </div>
             <!-- Imagen instagram siempre abajo -->
-            <p id="instagram"><a href="https://www.instagram.com/ortopediatiron?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="70" viewBox="0 0 30 30"
-                style="fill:#2e8b8b;">
-                <path d="M 15 2 C 7.832 2 2 7.832 2 15 C 2 22.168 7.832 28 15 28 C 22.168 28 28 22.168 28 15 C 28 7.832 22.168 2 15 2 z M 11.666016 6 L 18.332031 6 C 21.457031 6 24 8.5420156 24 11.666016 L 24 18.332031 C 24 21.457031 21.457984 24 18.333984 24 L 11.667969 24 C 8.5429688 24 6 21.457984 6 18.333984 L 6 11.667969 C 6 8.5429688 8.5420156 6 11.666016 6 z M 11.666016 8 C 9.6450156 8 8 9.6459688 8 11.667969 L 8 18.333984 C 8 20.354984 9.6459688 22 11.667969 22 L 18.333984 22 C 20.354984 22 22 20.354031 22 18.332031 L 22 11.666016 C 22 9.6450156 20.354031 8 18.332031 8 L 11.666016 8 z M 19.667969 9.6660156 C 20.035969 9.6660156 20.333984 9.9640312 20.333984 10.332031 C 20.333984 10.700031 20.035969 11 19.667969 11 C 19.299969 11 19 10.700031 19 10.332031 C 19 9.9640312 19.299969 9.6660156 19.667969 9.6660156 z M 15 10 C 17.757 10 20 12.243 20 15 C 20 17.757 17.757 20 15 20 C 12.243 20 10 17.757 10 15 C 10 12.243 12.243 10 15 10 z M 15 12 A 3 3 0 0 0 15 18 A 3 3 0 0 0 15 12 z"></path>
-                </svg>
-            </a></p>
+            <p id="instagram">
+                <a href="https://www.instagram.com/ortopediatiron?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                   target="_blank" 
+                   aria-label="Visita nuestro perfil de Instagram"
+                   rel="noopener noreferrer">
+                   
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="70" viewBox="0 0 30 30" role="img" aria-hidden="true" focusable="false" style="fill:#2e8b8b;">
+                    <title>Instagram</title>
+                    <path d="M 15 2 C 7.832 2 2 7.832 2 15 C 2 22.168 7.832 28 15 28 C 22.168 28 28 22.168 28 15 C 28 7.832 22.168 2 15 2 z M 11.666016 6 L 18.332031 6 C 21.457031 6 24 8.5420156 24 11.666016 L 24 18.332031 C 24 21.457031 21.457984 24 18.333984 24 L 11.667969 24 C 8.5429688 24 6 21.457984 6 18.333984 L 6 11.667969 C 6 8.5429688 8.5420156 6 11.666016 6 z M 11.666016 8 C 9.6450156 8 8 9.6459688 8 11.667969 L 8 18.333984 C 8 20.354984 9.6459688 22 11.667969 22 L 18.333984 22 C 20.354984 22 22 20.354031 22 18.332031 L 22 11.666016 C 22 9.6450156 20.354031 8 18.332031 8 L 11.666016 8 z M 19.667969 9.6660156 C 20.035969 9.6660156 20.333984 9.9640312 20.333984 10.332031 C 20.333984 10.700031 20.035969 11 19.667969 11 C 19.299969 11 19 10.700031 19 10.332031 C 19 9.9640312 19.299969 9.6660156 19.667969 9.6660156 z M 15 10 C 17.757 10 20 12.243 20 15 C 20 17.757 17.757 20 15 20 C 12.243 20 10 17.757 10 15 C 10 12.243 12.243 10 15 10 z M 15 12 A 3 3 0 0 0 15 18 A 3 3 0 0 0 15 12 z"></path>
+                  </svg>
+                </a>
+            </p>
         </footer>
     </div>
     <script type="module" src="JS/InicioFunciones.js"></script>
