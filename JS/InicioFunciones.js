@@ -1,11 +1,24 @@
 import * as gestionContacto from './GestionContacto.js';
 window.onload = function() {
     gestionAnimacion();
+    document.getElementById('despliegueMenu').addEventListener('change', gestionHamburguesaYMapa)
     crearMapa();
-    
+    if(document.getElementById("politicaPrivacidad")){
+        document.getElementById("politicaPrivacidad").addEventListener("click", function() {
+            gestionContacto.crearModalPolitica();
+        });
+    }
     console.log("La página ha cargado completamente.");
 }
-
+function gestionHamburguesaYMapa(){
+    const hamburguesa=document.getElementById('despliegueMenu');
+    const mapa=document.getElementById('contenedorMapa');
+    if(hamburguesa.checked){
+        mapa.style.position='fixed';
+    }else{
+        mapa.style.position='static';
+    }
+}   
 function gestionAnimacion() {
     const animacion = document.getElementById('animacion');
     const pagina = document.getElementById('pagina');

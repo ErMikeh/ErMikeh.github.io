@@ -1,6 +1,8 @@
 export function crearModalPolitica(){
-        // Crear el contenedor del modal
+    if(!document.getElementById('modalPolitica')){
+        // Crear el contenedor del modal, ocupa toda la pantalla
         const modal = document.createElement('div');
+        modal.id = 'modalPolitica';
         modal.style.position = 'fixed';
         modal.style.top = '0';
         modal.style.left = '0';
@@ -10,7 +12,7 @@ export function crearModalPolitica(){
         modal.style.display = 'flex';
         modal.style.justifyContent = 'center';
         modal.style.alignItems = 'center';
-        modal.style.zIndex = '9999';
+        modal.style.zIndex = '1000';
     
         // Crear el contenido del modal
         const modalContent = document.createElement('div');
@@ -29,10 +31,7 @@ export function crearModalPolitica(){
         // Agregar el contenido de la política
         const modalText = document.createElement('p');
         modalText.textContent = `
-        En nuestra empresa, respetamos tu privacidad. Recopilamos información personal únicamente para proporcionarte una mejor experiencia de usuario.
-        Esta información puede incluir tu nombre, correo electrónico y preferencias de uso. No compartimos ni vendemos tu información a terceros.
-        Te comprometemos a mantener tus datos seguros y a informarte si se realizan cambios en nuestra política de privacidad.
-        `;
+        En nuestra empresa, respetamos tu privacidad. Esta información puede incluir tu nombre, correo electrónico y preferencias de uso. No compartimos ni vendemos tu información a terceros. Nos comprometemos a mantener tus datos seguros y a informarte si se realizan cambios en nuestra política de privacidad.`;
         modalContent.appendChild(modalText);
     
         // Crear el botón de cierre
@@ -41,7 +40,7 @@ export function crearModalPolitica(){
         closeButton.style.marginTop = '20px';
         closeButton.style.padding = '10px 20px';
         closeButton.style.border = 'none';
-        closeButton.style.backgroundColor = '#007BFF';
+        closeButton.style.backgroundColor = '#9AD1C5';
         closeButton.style.color = '#fff';
         closeButton.style.borderRadius = '5px';
         closeButton.style.cursor = 'pointer';
@@ -58,4 +57,7 @@ export function crearModalPolitica(){
     
         // Añadir el modal al cuerpo del documento
         document.body.appendChild(modal);
+    }else{
+        document.getElementById('modalPolitica').style.display = 'flex';
+    }   
 }
