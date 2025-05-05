@@ -222,6 +222,11 @@ nav{
     transform: scaleX(1);
     transform-origin: left;
 }
+ul{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
 
 /* Estilos main generales */
 main{
@@ -669,7 +674,11 @@ footer{
         transform: none !important;
         z-index: auto !important;
       }
-
+      ul{
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+    }
    
     /* Estilos main generales */
     main{
