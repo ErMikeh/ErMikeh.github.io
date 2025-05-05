@@ -263,6 +263,7 @@ main{
     height: 25vw;
     animation-name: fadeIn;
     animation-duration: 1s;
+    border-radius: 5px;
     animation-timing-function: ease-in;
     box-shadow: #29AC86 0 0 0.75rem;
 }
@@ -468,6 +469,7 @@ footer{
         height: 25vw;
         animation-name: fadeIn;
         animation-duration: 1s;
+        border-radius: 5px;
         animation-timing-function: ease-in;
         box-shadow: #29AC86 0 0 0.75rem;
     }
