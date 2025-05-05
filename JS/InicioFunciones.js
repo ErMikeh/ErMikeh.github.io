@@ -1,15 +1,34 @@
 import * as gestionContacto from './GestionContacto.js';
+
+//Ordenamos y sacamos a constantes las cosas necesarias
+const politicaPrivacidad="En este sitio web recopilamos y tratamos datos personales con el único fin de ofrecer una experiencia de usuario eficiente, segura y adaptada a tus necesidades. Utilizamos cookies y tecnologías similares para analizar el tráfico, recordar tus preferencias y mejorar nuestros servicios. Tus datos no serán compartidos con terceros sin tu consentimiento, salvo obligación legal o necesidad operativa estricta."
+
 window.onload = function() {
     gestionAnimacion();
-    document.getElementById('despliegueMenu').addEventListener('change', gestionHamburguesaYMapa)
     crearMapa();
-    if(document.getElementById("politicaPrivacidad")){
-        document.getElementById("politicaPrivacidad").addEventListener("click", function() {
-            gestionContacto.crearModalPolitica();
+    document.getElementById('despliegueMenu').addEventListener('change', gestionHamburguesaYMapa)
+    //gesionamos el botón de enviar
+    if(document.getElementById('enviar'))
+        document.getElementById('enviar').addEventListener('click', gestionEnviarMensaje);
+
+    //gestionamos el enlace de política de privacidad
+    const enlaces = document.querySelectorAll(".politicaPrivacidad");
+    enlaces.forEach(enlace => {
+        enlace.addEventListener("click", function() {
+            gestionContacto.crearModal("Política de Privacidad", politicaPrivacidad);
         });
-    }
-    console.log("La página ha cargado completamente.");
+    });
 }
+
+function gestionEnviarMensaje(){
+    const nombre = document.getElementById('nombre').value;
+    const apellidos = document.getElementById('apellidos').value;
+    const numero = document.getElementById('tel').value;
+    const mensaje = document.getElementById('mensaje').value;
+    const mensajeCompleto = `Hola, soy ${nombre} ${apellidos}, con numero: ${numero}. ${mensaje}`;
+    console.log(mensajeCompleto);
+}
+
 function gestionHamburguesaYMapa(){
     const hamburguesa=document.getElementById('despliegueMenu');
     const mapa=document.getElementById('contenedorMapa');

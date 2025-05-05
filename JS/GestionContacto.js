@@ -1,4 +1,8 @@
-export function crearModalPolitica(){
+export function gestionMensaje(numero, mensaje){
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url);
+}
+export function crearModal(Titulo, Mensaje){
     if(!document.getElementById('modalPolitica')){
         // Crear el contenedor del modal, ocupa toda la pantalla
         const modal = document.createElement('div');
@@ -25,13 +29,12 @@ export function crearModalPolitica(){
     
         // Agregar título al modal
         const modalTitle = document.createElement('h2');
-        modalTitle.textContent = 'Política de Privacidad';
+        modalTitle.textContent = Titulo;
         modalContent.appendChild(modalTitle);
     
         // Agregar el contenido de la política
         const modalText = document.createElement('p');
-        modalText.textContent = `
-        En nuestra empresa, respetamos tu privacidad. Esta información puede incluir tu nombre, correo electrónico y preferencias de uso. No compartimos ni vendemos tu información a terceros. Nos comprometemos a mantener tus datos seguros y a informarte si se realizan cambios en nuestra política de privacidad.`;
+        modalText.textContent = Mensaje;
         modalContent.appendChild(modalText);
     
         // Crear el botón de cierre
