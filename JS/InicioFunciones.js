@@ -10,8 +10,8 @@ window.onload = function() {
     }, 100);
     document.getElementById('despliegueMenu').addEventListener('change', gestionHamburguesaYMapa)
     //gesionamos el botón de enviar
-    if(document.getElementById('enviar'))
-        document.getElementById('enviar').addEventListener('click', gestionEnviarMensaje);
+    if(document.getElementById('formulario'))
+        document.getElementById('formulario').addEventListener('submit', gestionEnviarMensaje);
 
     //gestionamos el enlace de política de privacidad
     const enlaces = document.querySelectorAll(".politicaPrivacidad");
@@ -27,8 +27,8 @@ function gestionEnviarMensaje(){
     const apellidos = document.getElementById('apellidos').value;
     const numero = document.getElementById('tel').value;
     const mensaje = document.getElementById('mensaje').value;
-    const mensajeCompleto = `Hola, soy ${nombre} ${apellidos}, con numero: ${numero}. ${mensaje}`;
-    console.log(mensajeCompleto);
+    const mensajeCompleto = `Hola, soy ${nombre} ${apellidos}. ${mensaje}`;
+    gestionContacto.gestionMensaje(numero, mensajeCompleto);
 }
 
 function gestionHamburguesaYMapa(){

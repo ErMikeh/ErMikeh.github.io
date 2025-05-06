@@ -1,6 +1,8 @@
 export function gestionMensaje(numero, mensaje){
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url);
+    console.log("Número: " + numero);
+    console.log("Mensaje: " + mensaje);
+    const url = `https://wa.me/+34691700663?text=${encodeURIComponent("Mensaje: " + mensaje)}`;
+    window.open(url, '_blank');
 }
 export function crearModal(Titulo, Mensaje){
     if(!document.getElementById('modalPolitica')){
