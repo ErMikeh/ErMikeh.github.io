@@ -5,7 +5,9 @@ const politicaPrivacidad="En este sitio web recopilamos y tratamos datos persona
 
 window.onload = function() {
     gestionAnimacion();
-    crearMapa();
+    setTimeout(() => {
+        crearMapa();
+    }, 100);
     document.getElementById('despliegueMenu').addEventListener('change', gestionHamburguesaYMapa)
     //gesionamos el botón de enviar
     if(document.getElementById('enviar'))
