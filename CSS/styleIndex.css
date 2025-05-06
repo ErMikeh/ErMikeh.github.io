@@ -764,7 +764,7 @@ footer{
     }
     .tarjeta {
         width: 25vw;
-        height: 70vh;
+        height: 40vw;
         perspective: 1000px;
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
