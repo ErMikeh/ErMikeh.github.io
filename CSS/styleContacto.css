@@ -6,13 +6,6 @@
     font-weight: 100;
     font-style: normal;
   }
-
-  .dosis-Titulo {
-    font-family: "Dosis";
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-  }
 /* Estilos generales */
 @keyframes fadeIn {
     0% { opacity: 0; }
