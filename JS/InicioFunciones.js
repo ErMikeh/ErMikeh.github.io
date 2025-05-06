@@ -4,10 +4,7 @@ import * as gestionContacto from './GestionContacto.js';
 const politicaPrivacidad="En este sitio web recopilamos y tratamos datos personales con el único fin de ofrecer una experiencia de usuario eficiente, segura y adaptada a tus necesidades. Utilizamos cookies y tecnologías similares para analizar el tráfico, recordar tus preferencias y mejorar nuestros servicios. Tus datos no serán compartidos con terceros sin tu consentimiento, salvo obligación legal o necesidad operativa estricta."
 
 window.onload = function() {
-    gestionAnimacion();
-    setTimeout(() => {
-        crearMapa();
-    }, 100);
+    gestionAnimacionYMapa();
     document.getElementById('despliegueMenu').addEventListener('change', gestionHamburguesaYMapa)
     //gesionamos el botón de enviar
     if(document.getElementById('formulario')){
@@ -46,7 +43,7 @@ function gestionHamburguesaYMapa(){
         mapa.style.position='static';
     }
 }   
-function gestionAnimacion() {
+function gestionAnimacionYMapa() {
     const animacion = document.getElementById('animacion');
     const pagina = document.getElementById('pagina');
     if (!obtenerCookie('primeraEntrada')) {
@@ -60,7 +57,13 @@ function gestionAnimacion() {
                 pagina.style.display = 'block';
             }, 900); // espera que termine el fade
         }, 2500); // tiempo total de animación antes de difuminar
+        setTimeout(() => {
+            crearMapa();
+        }, 3600);
     }else{
+        setTimeout(() => {
+            crearMapa();
+        }, 200);
         animacion.style.display = 'none';
         pagina.style.display = 'block';
     }
