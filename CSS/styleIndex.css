@@ -463,7 +463,7 @@ footer{
     /* Imagenes de los contenidos principaes */
     .imagenContenido img{
         width:40vw;
-        height: 25vw;
+        height: 28vw;
         animation-name: fadeIn;
         animation-duration: 1s;
         border-radius: 5px;
@@ -495,7 +495,7 @@ footer{
     }
     .tarjeta {
         width: 25vw;
-        height: 50vh;
+        height: 40vh;
         perspective: 1000px;
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
@@ -667,10 +667,11 @@ footer{
     }
     /* Estilos imagenes carrusel */
     #carouselExampleSlidesOnly{
+        width: 40vw;
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
     .carousel-item img{
-        height: 90vh;
+        height: 70vh;
     }
   /* Contenedor para el contenido principal general */
   #contenedorContenidoPrincipal{
@@ -690,14 +691,14 @@ footer{
     }
     .contenidoPrincipal p{
         justify-self: center;
-        font-size: 1.5vw;
+        font-size: 3vh;
         text-align: left;
     }
 
     /* Imagenes de los contenidos principaes */
     .imagenContenido img{
-        width:100%;
-        height: 100%;
+        width:80%;
+        height: 80%;
         animation-name: fadeIn;
         animation-duration: 1s;
         animation-timing-function: ease-in;
@@ -719,7 +720,7 @@ footer{
     #contenido1 h3{
         grid-column: 1/4;
         grid-row: 1;
-        font-size: 3vw;
+        font-size: 6vh;
         text-align: left;
         border-bottom: #2E8B8B solid 2px;
     }
@@ -760,7 +761,7 @@ footer{
         margin: 4vh;
     }
     .tarjeta {
-        width: 25vw;
+        width: 30%;
         height: 40vw;
         perspective: 1000px;
         filter: drop-shadow(0 0 0.75rem #29AC86);
