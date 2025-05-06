@@ -255,6 +255,7 @@ main{
     margin: auto 1vw;
     border-collapse: collapse;
     padding: 2vw;
+    width: 97%;
 }
 #tablaFormulario tr{
     display: flex;
