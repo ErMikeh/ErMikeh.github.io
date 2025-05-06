@@ -147,7 +147,6 @@ header{
     mix-blend-mode: multiply;
 }
 
-
 #menu {
     display: flex;
     gap: 2em;
@@ -671,7 +670,7 @@ footer{
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
     .carousel-item img{
-        height: 40vw;
+        height: 90vh;
     }
   /* Contenedor para el contenido principal general */
   #contenedorContenidoPrincipal{

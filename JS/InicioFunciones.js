@@ -10,8 +10,12 @@ window.onload = function() {
     }, 100);
     document.getElementById('despliegueMenu').addEventListener('change', gestionHamburguesaYMapa)
     //gesionamos el botón de enviar
-    if(document.getElementById('formulario'))
-        document.getElementById('formulario').addEventListener('submit', gestionEnviarMensaje);
+    if(document.getElementById('formulario')){
+        document.getElementById('formulario').addEventListener('submit', function(e){
+            e.preventDefault(); // Evitamos el envío del formulario
+            gestionEnviarMensaje();
+        });
+    }
 
     //gestionamos el enlace de política de privacidad
     const enlaces = document.querySelectorAll(".politicaPrivacidad");
