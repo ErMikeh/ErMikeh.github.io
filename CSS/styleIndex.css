@@ -264,6 +264,10 @@ main{
     animation-timing-function: ease-in;
     box-shadow: #29AC86 0 0 0.75rem;
 }
+#Olatz{
+    width:40vw;
+    height: auto;
+}
 
 /* Primer contenido */
 #imgCont1{
@@ -365,7 +369,7 @@ main{
     background-size: cover;
 }
 #tarjetaInstalaciones .tarjeta-delante{
-    background-image: url(../RecursosAudiovisuales/Images/futuro-de-la-fisioterapia-jfisio.webp);
+    background-image: url(../RecursosAudiovisuales/Images/Taller_Vertical.webp);
     background-size: cover;
 }
 
@@ -550,7 +554,7 @@ footer{
         background-size: cover;
     }
     #tarjetaInstalaciones .tarjeta-delante{
-        background-image: url(../RecursosAudiovisuales/Images/futuro-de-la-fisioterapia-jfisio.webp);
+        background-image: url(../RecursosAudiovisuales/Images/Taller_Vertical.webp);
         background-size: cover;
     }
     
@@ -698,12 +702,15 @@ footer{
     /* Imagenes de los contenidos principaes */
     .imagenContenido img{
         width:80%;
-        height: 80%;
+        height: 90%;
         animation-name: fadeIn;
         animation-duration: 1s;
         animation-timing-function: ease-in;
         border-radius: 5px;
         box-shadow: #29AC86 0 0 0.75rem;
+    }
+    #Olatz{
+        width: 50%;
     }
     /* Primer contenido */
     #contenido1 {
@@ -812,7 +819,7 @@ footer{
         background-size: cover;
     }
     #tarjetaInstalaciones .tarjeta-delante{
-        background-image: url(../RecursosAudiovisuales/Images/futuro-de-la-fisioterapia-jfisio.webp);
+        background-image: url(../RecursosAudiovisuales/Images/Taller_Vertical.webp);
         background-size: cover;
     }   
 
