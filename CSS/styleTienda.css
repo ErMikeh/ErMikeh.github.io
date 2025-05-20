@@ -195,7 +195,57 @@ ul{
     text-align: start;
 }
 
+/* Main */
+main{
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Estilos productos */
+#productos{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.producto{
+    text-align: justify;
+    width: 80%;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 4px #29AC86;
+}
+.producto img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.producto button{
+    border: none;
+    background: transparent;
+}
+
+.compra{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1em;
+}
+.svgCompra{
+    width: 8vw;
+}
+/* Estilo para botones de redes sociales */
+#instagram{
+    position: fixed;
+    bottom: 1px;
+    right: 10px;
+    z-index: 1000;
+}
 /* Estilos footer generales */
 footer{
     margin-top: auto;
@@ -232,8 +282,19 @@ footer{
 }
 
 @media (min-width: 768px){
-    /* Estilo para botones de redes sociales */
-
+    /* Estilos main */
+    #productos{
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        align-items: center;
+    }
+    .producto{
+        margin: 1em auto;
+    }
+    .svgCompra{
+        width: 5vw;
+    }
     /* Estilos footer generales */
     footer{
         margin-top: auto;
@@ -273,6 +334,16 @@ footer{
 }
 
 @media (min-width:1030px){
+    main{
+        text-align: center;
+        padding: 1em;
+    }
+    .producto{
+        margin: 1em;
+    }
+    .svgCompra{
+        width: 5vw;
+    }
     /* Estilos para el div de la animación */
     video{
         width: 100vw;
@@ -316,14 +387,13 @@ footer{
         flex-direction: row;
         gap: 2em;
     }
-
-    /* Estilo para botones de redes sociales */
-    #instagram{
-        position: fixed;
-        bottom: 1px;
-        right: 10px;
-        z-index: 1000;
+    /* Estilos main */
+    #productos{
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
     }
+
     /* Estilos footer generales */
     footer{
         margin-top: auto;
