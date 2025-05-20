@@ -10,7 +10,6 @@ export function aniadirCarrito(idProducto) {
         carrito.push([idProducto, 1]);
     } else {
         carrito[index][1] += 1;
-        return;
     }
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
 }

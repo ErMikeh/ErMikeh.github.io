@@ -29,7 +29,6 @@ window.onload = function() {
         botonesCompra.forEach(boton => {
             boton.addEventListener("click", function() {
                 const idProducto = this.value;
-                
                 gestionCompra.aniadirCarrito(idProducto);
             });
         });
