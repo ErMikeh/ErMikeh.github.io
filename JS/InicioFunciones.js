@@ -1,4 +1,5 @@
 import * as gestionContacto from './GestionContacto.js';
+import * as gestionCompra from './GestionCompra.js';
 
 //Ordenamos y sacamos a constantes las cosas necesarias
 const politicaPrivacidad="En este sitio web recopilamos y tratamos datos personales con el único fin de ofrecer una experiencia de usuario eficiente, segura y adaptada a tus necesidades. Utilizamos cookies y tecnologías similares para analizar el tráfico, recordar tus preferencias y mejorar nuestros servicios. Tus datos no serán compartidos con terceros sin tu consentimiento, salvo obligación legal o necesidad operativa estricta."
@@ -21,6 +22,18 @@ window.onload = function() {
             gestionContacto.crearModal("Política de Privacidad", politicaPrivacidad);
         });
     });
+
+    //gestionamos el botón de añadir al carrito
+    const botonesCompra = document.querySelectorAll(".botonProducto");
+    if(botonesCompra.length > 0){
+        botonesCompra.forEach(boton => {
+            boton.addEventListener("click", function() {
+                const idProducto = this.value;
+                
+                gestionCompra.aniadirCarrito(idProducto);
+            });
+        });
+    }
 }
 
 function gestionEnviarMensaje(){
