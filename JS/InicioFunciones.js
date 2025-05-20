@@ -46,8 +46,8 @@ function gestionHamburguesaYMapa(){
 function gestionAnimacionYMapa() {
     const animacion = document.getElementById('animacion');
     const pagina = document.getElementById('pagina');
-    if (!obtenerCookie('primeraEntrada')) {
-        crearCookie("primeraEntrada", true, 30);
+    if (!sessionStorage.getItem("primeraEntrada")) {
+        sessionStorage.setItem("primeraEntrada", true, 30);
         setTimeout(() => {
             animacion.style.animationName = 'fadeOut';
             animacion.style.animationDuration = '1s';
@@ -69,20 +69,6 @@ function gestionAnimacionYMapa() {
     }
 }
 
-function obtenerCookie(nombre) {
-    const cookies = document.cookie.split(';');
-    for (let c of cookies) {
-        const [key, value] = c.trim().split('=');
-        if (key === nombre) return decodeURIComponent(value);
-    }
-    return null;
-}
-function crearCookie(nombre, valor, minutos = 30) {
-    const horno = new Date();
-    horno.setTime(horno.getTime() + (minutos * 60 * 1000));
-    const receta = `${encodeURIComponent(nombre)}=${encodeURIComponent(valor)}; expires=${horno.toUTCString()}; path=/`;
-    document.cookie = receta;
-}
 function crearMapa(){
     // 1. Crear el mapa centrado en unas coordenadas
     var mapa = L.map('mapa').setView([42.57507, -2.8511], 16);
