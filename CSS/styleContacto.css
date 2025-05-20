@@ -21,7 +21,7 @@
     font-family: "Montserrat", sans-serif;
 }
 body{
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     background-color: #F8FBF8;
@@ -367,14 +367,7 @@ footer{
         flex-direction: row;
         gap: 2em;
     }
-   
-    /* Estilo para botones de redes sociales */
-    #instagram{
-        position: fixed;
-        bottom: 1px;
-        right: 10px;
-        z-index: 1000;
-    }
+
     /* Estilos footer generales */
     footer{
         margin-top: auto;
