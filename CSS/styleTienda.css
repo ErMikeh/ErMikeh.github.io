@@ -225,7 +225,10 @@ main{
     height: auto;
     border-radius: 10px;
 }
-.producto button{
+#btnCarrito{
+    position: fixed;
+    top: 5em;
+    right: 1em;
     border: none;
     background: transparent;
 }
@@ -239,6 +242,38 @@ main{
 .svgCompra{
     width: 8vw;
 }
+/* Estilo aside para el carrito */
+ /* Aside oculto por defecto */
+    #asidePanel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      background-color: white;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+      transition: right 0.4s ease;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    /* Clase para mostrar el aside */
+    #asidePanel.mostrar {
+      right: 0;
+    }
+
+    /* Botón de cierre dentro del aside */
+    #cerrarAside {
+      background-color: #2e8b8b;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
 /* Estilo para botones de redes sociales */
 #instagram{
     position: fixed;

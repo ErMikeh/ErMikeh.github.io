@@ -28,11 +28,20 @@ window.onload = function() {
     if(botonesCompra.length > 0){
         botonesCompra.forEach(boton => {
             boton.addEventListener("click", function() {
+                if(document.getElementById("btnCarrito").style.display = "none"){
+                    document.getElementById("btnCarrito").style.display = "block";
+                }
+                gestionCompra.mostrarCarrito();
                 const idProducto = this.value;
                 gestionCompra.aniadirCarrito(idProducto);
             });
         });
     }
+    if(sessionStorage.getItem('carrito')){
+        document.getElementById("btnCarrito").style.display = "block";
+    }
+    gestionCompra.mostrarCarrito();
+
 }
 
 function gestionEnviarMensaje(){

@@ -13,3 +13,13 @@ export function aniadirCarrito(idProducto) {
     }
     sessionStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+export function mostrarCarrito() {
+    const aside = document.getElementById('asidePanel');
+    document.getElementById("btnCarrito").addEventListener("click", function() {
+        aside.classList.add('mostrar');
+    });
+    document.getElementById('cerrarAside').addEventListener('click', () => {
+      aside.classList.remove('mostrar');
+    });
+}
