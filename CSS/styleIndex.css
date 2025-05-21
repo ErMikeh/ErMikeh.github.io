@@ -663,7 +663,7 @@ footer{
     }
     /* Estilos imagenes carrusel */
     #carouselExampleSlidesOnly{
-        width: 40vw;
+        width: 50vw;
         filter: drop-shadow(0 0 0.75rem #29AC86);
     }
     .carousel-item img{

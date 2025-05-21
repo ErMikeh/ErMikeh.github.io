@@ -209,14 +209,13 @@ main{
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .producto{
     text-align: justify;
     width: 80%;
-    height: 50vh;
-    margin: 1em;
+    height: 60vh;
+    margin: 1em auto;
     padding: 1em;
     border-radius: 10px;
     box-shadow: 1px 1px 4px 4px #29AC86;
@@ -264,16 +263,12 @@ main{
     }
 
     /* Botón de cierre dentro del aside */
-    #cerrarAside {
+    .btnAside {
       background-color: #2e8b8b;
       color: white;
       border: none;
       padding: 5px 10px;
       border-radius: 5px;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      left: 10px;
     }
 /* Estilo para botones de redes sociales */
 #instagram{
@@ -326,6 +321,7 @@ footer{
         align-items: center;
     }
     .producto{
+        height: 40vh;
         margin: 1em auto;
     }
     .svgCompra{
@@ -375,7 +371,8 @@ footer{
         padding: 1em;
     }
     .producto{
-        margin: 1em;
+        height: 50vh;
+        margin: 1em auto;
     }
     .svgCompra{
         width: 5vw;
