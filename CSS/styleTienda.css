@@ -223,7 +223,7 @@ main{
 .producto{
     text-align: start;
     width: 80%;
-
+    min-height: 30vw;
     margin: 1em auto;
     padding: 1em;
     border-radius: 10px;
@@ -407,6 +407,7 @@ footer{
         align-items: center;
     }
     .producto{
+        height: 45vh;
         margin: 1em auto;
     }
     /* Filas productos carrito */
@@ -501,6 +502,7 @@ footer{
         grid-template-columns: repeat(3, 33%);
     }
     .producto{
+        height: 47vh;
         margin: 1em auto;
     }
      /* Filas productos carrito */
