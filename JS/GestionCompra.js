@@ -8,6 +8,7 @@ export function cargarProductos() {
         return response.json();
     })
     .then(data => {
+        document.getElementById("loader").style.display="none"; // Eliminamos el loader
         data.forEach(producto => {
             tarjetaProducto(producto);
         });
