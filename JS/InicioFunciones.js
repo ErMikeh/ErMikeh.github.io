@@ -19,6 +19,10 @@ window.onload = function() {
     const enlaces = document.querySelectorAll(".politicaPrivacidad");
     enlaces.forEach(enlace => {
         enlace.addEventListener("click", function() {
+            if(document.getElementById("btnCarrito").style.display = "none")
+                document.getElementById("btnCarrito").style.display = "block";
+
+            
             gestionContacto.crearModal("Política de Privacidad", politicaPrivacidad);
         });
     });
@@ -27,13 +31,28 @@ window.onload = function() {
     gestionCompra.cargarProductos();
     if(sessionStorage.getItem('carrito')){
         document.getElementById("btnCarrito").style.display = "block";
+        generarContenidoCarrito();
     }
     gestionCompra.mostrarCarrito();
-
+    if(document.getElementById("borrarCarrito")){
+        document.getElementById("borrarCarrito").addEventListener('click', function(){
+            sessionStorage.removeItem('carrito');
+            document.getElementById("btnCarrito").style.display = "none";
+            const divCarrito = document.getElementById('divCarrito');
+            divCarrito.innerHTML = '<h3>No hay productos en el carrito</h3>';
+        });
+    }
 }
-function generarCarrito(){
+function generarContenidoCarrito(){
     const carrito = JSON.parse(sessionStorage.getItem('carrito'));
     const divCarrito = document.getElementById('divCarrito');
+    divCarrito.innerHTML = ''; // Limpiamos el contenido previo
+    if (carrito.length == 0) {
+        divCarrito.innerHTML = '<h3>No hay productos en el carrito</h3>';
+        return;
+    }else{
+        gestionCompra.generarCarrito();
+    }
 }
 function gestionEnviarMensaje(){
     const nombre = document.getElementById('nombre').value;
