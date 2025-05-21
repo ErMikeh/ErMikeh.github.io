@@ -843,6 +843,9 @@ footer{
         grid-column: 2/3;
         grid-row: 1;
     }
+    #mapa{
+        z-index: 0;
+    }
     #tablaFooter{
         grid-column: 1;
         width: 40vw;

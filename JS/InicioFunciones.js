@@ -14,7 +14,11 @@ window.onload = function() {
             gestionEnviarMensaje();
         });
     }
-
+    document.getElementById("despliegueMenu").addEventListener("change", function() {
+        if(this.checked) {
+             document.getElementById("contenedorMapa").style.position = "relative";
+        }
+    });
     //gestionamos el enlace de política de privacidad
     const enlaces = document.querySelectorAll(".politicaPrivacidad");
     enlaces.forEach(enlace => {
