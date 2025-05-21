@@ -215,6 +215,7 @@ main{
 .producto{
     text-align: justify;
     width: 80%;
+    height: 50vh;
     margin: 1em;
     padding: 1em;
     border-radius: 10px;

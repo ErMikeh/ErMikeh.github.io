@@ -24,26 +24,17 @@ window.onload = function() {
     });
 
     //gestionamos el botón de añadir al carrito
-    const botonesCompra = document.querySelectorAll(".botonProducto");
-    if(botonesCompra.length > 0){
-        botonesCompra.forEach(boton => {
-            boton.addEventListener("click", function() {
-                if(document.getElementById("btnCarrito").style.display = "none"){
-                    document.getElementById("btnCarrito").style.display = "block";
-                }
-                gestionCompra.mostrarCarrito();
-                const idProducto = this.value;
-                gestionCompra.aniadirCarrito(idProducto);
-            });
-        });
-    }
+    gestionCompra.cargarProductos();
     if(sessionStorage.getItem('carrito')){
         document.getElementById("btnCarrito").style.display = "block";
     }
     gestionCompra.mostrarCarrito();
 
 }
-
+function generarCarrito(){
+    const carrito = JSON.parse(sessionStorage.getItem('carrito'));
+    const divCarrito = document.getElementById('divCarrito');
+}
 function gestionEnviarMensaje(){
     const nombre = document.getElementById('nombre').value;
     const apellidos = document.getElementById('apellidos').value;
