@@ -17,6 +17,12 @@ body{
     flex-direction: column;
     background-color: #F8FBF8;
 }
+/* estilo grid */
+#gridGeneral{
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
 /* Estilos para el div de la animación */
 video{
     width: 100vw;
@@ -133,6 +139,7 @@ video{
     }
 /* Estilos header generales */
 header{
+    grid-row: 1;
     background: linear-gradient(to top, #F8FBF8, #9AD1C5);
     padding: 1vw;
     display: flex;
@@ -197,6 +204,7 @@ ul{
 
 /* Main */
 main{
+    grid-row: 2;
     text-align: center;
     padding: 1em;
     display: flex;
@@ -213,9 +221,9 @@ main{
 }
 
 .producto{
-    text-align: justify;
+    text-align: start;
     width: 80%;
-    height: 60vh;
+
     margin: 1em auto;
     padding: 1em;
     border-radius: 10px;
@@ -228,8 +236,8 @@ main{
 }
 #btnCarrito{
     position: fixed;
-    top: 5em;
-    right: 1em;
+    bottom: 4em;
+    right: .8em;
     border: none;
     background: transparent;
 }
@@ -241,7 +249,7 @@ main{
     gap: 1em;
 }
 .svgCompra{
-    width: 8vw;
+    width: 3em;
 }
 /* Animación de cargado para los porductos */
     .loader {
@@ -268,15 +276,24 @@ main{
       position: fixed;
       top: 0;
       right: -100%;
-      width: 300px;
+      width: 100vw;
       height: 100%;
       background-color: white;
       box-shadow: -2px 0 10px rgba(0,0,0,0.2);
       transition: right 0.4s ease;
       z-index: 1000;
-      padding: 20px;
+      padding: 1em;
+      overflow-y: scroll;
     }
-
+    #divBotonesCarrito{
+        grid-row: 3;
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        align-items: center;
+        margin: 4em;
+        z-index: 30;
+    }
     /* Clase para mostrar el aside */
     #asidePanel.mostrar {
       right: 0;
@@ -290,6 +307,51 @@ main{
       padding: 5px 10px;
       border-radius: 5px;
     }
+    /* Filas productos carrito */
+    .filaProducto{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        padding: .3em;
+        border-bottom: 1px solid #ccc;
+    }
+    .filaComplementaria{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: .5em;
+    }
+    .filaComplementaria img{
+        width: 25vw;
+        height: auto;
+        border-radius: 10px;
+    }
+    .botonesSumarRestar{
+        display: flex;
+        gap: .5em;
+    }
+    .botonesSumarRestar button{
+        min-width: 10vw;
+    }
+    .botonesFilaComplementaria{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+    }
+    .botonProducto{
+        min-width: 5vw;
+        background-color: #29AC86;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        padding: .5em;
+        cursor: pointer;
+    }
 /* Estilo para botones de redes sociales */
 #instagram{
     position: fixed;
@@ -299,6 +361,7 @@ main{
 }
 /* Estilos footer generales */
 footer{
+    grid-row: 3;
     margin-top: auto;
     background: black;
     padding: 1vw;
@@ -344,11 +407,30 @@ footer{
         align-items: center;
     }
     .producto{
-        height: 40vh;
         margin: 1em auto;
     }
-    .svgCompra{
-        width: 5vw;
+    /* Filas productos carrito */
+    .filaProducto{
+        padding: 2em;
+    }
+    .filaComplementaria{
+        gap: .5em;
+    }
+    .filaComplementaria img{
+        width: 20vw;
+    }
+    .botonesSumarRestar{
+        display: flex;
+        flex-direction: row;
+        gap: .5em;
+    }
+    .botonesSumarRestar button{
+        min-width: 10vw;
+    }
+    .botonesFilaComplementaria{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
     }
     /* Estilos footer generales */
     footer{
@@ -387,22 +469,62 @@ footer{
         padding: 1vw 0;
     }
 }
-
 @media (min-width:1030px){
+    /* Bloqueador de pantalla */
+    #bloqueadorPantalla {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 19;
+        background-color: rgba(0, 0, 0, 0); /* totalmente transparente */
+        pointer-events: none; /* por defecto no bloquea nada */
+        transition: background-color 0.3s ease;
+    }
+    #bloqueadorPantalla.activo {
+        pointer-events: all; /* ahora bloquea todo lo que esté debajo */
+        background-color: rgba(0, 0, 0, 0.5); /* opcional: lo haces visible */
+    }
+    /* Aside panel */
+    #asidePanel {
+      width: 50vw;
+    }
     main{
         text-align: center;
         padding: 1em;
     }
+        /* Estilos main */
     #productos{
         text-align: center;
-
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
     }
     .producto{
-        height: 50vh;
         margin: 1em auto;
     }
-    .svgCompra{
-        width: 5vw;
+     /* Filas productos carrito */
+    .filaProducto{
+        padding: 1em;
+    }
+    .filaComplementaria{
+        gap: .5em;
+    }
+    .filaComplementaria img{
+        width: 10vw;
+    }
+    .botonesSumarRestar{
+        display: flex;
+        flex-direction: row;
+        gap: .5em;
+    }
+    .botonesSumarRestar button{
+        min-width: 5vw;
+    }
+    .botonesFilaComplementaria{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
     }
     /* Estilos para el div de la animación */
     video{
@@ -447,12 +569,7 @@ footer{
         flex-direction: row;
         gap: 2em;
     }
-    /* Estilos main */
-    #productos{
-        text-align: center;
-        display: grid;
-        grid-template-columns: repeat(3, 33%);
-    }
+
 
     /* Estilos footer generales */
     footer{

@@ -63,13 +63,15 @@ function tarjetaProducto(producto) {
     divProductos.appendChild(tarjeta);
 }
 function gestionEventoBotonesCompra() {
-    if(document.getElementById("btnCarrito").style.display = "none"){
-        document.getElementById("btnCarrito").style.display = "block";
-    }
     mostrarCarrito();
     const idProducto = this.value;
     aniadirCarrito(idProducto);
+    if(sessionStorage.getItem('carrito'))
+        document.getElementById("divCarrito").innerHTML = '';  
+    generarCarrito();
 }
+
+// Genera el contenido del carrito
 export function generarCarrito(){
     fetch("http://localhost:8080/productos")
     .then(response => {
@@ -79,120 +81,120 @@ export function generarCarrito(){
         return response.json();
     })
     .then(data => {
+        const carrito = JSON.parse(sessionStorage.getItem('carrito'));
+        const productosCarritoCompleto=[];
         data.forEach(producto => {
-            const carrito = JSON.parse(sessionStorage.getItem('carrito'));
             carrito.forEach(prodCarrito => {
-                if(producto.idProducto == prodCarrito.idProducto){
-                    const divCarrito = document.getElementById('divCarrito');
-                    const filaCarrito = document.createElement('div');
-                    filaCarrito.className = 'filaCarrito';
-                    filaCarrito.id = producto.idProducto;
-                    // Creamos el título <h2>
-                    const titulo = document.createElement('h2');
-                    titulo.textContent = producto.nombre;
-                    filaCarrito.appendChild(titulo);
-                    //creamos el div para la imagen-precio-cantidad-botones
-                    const  filaProd = document.createElement('div');
-                    filaProd.className = 'filaProd';
-                    // creamos la imagen
-                    if(producto.imagen){
-                        const imagen = document.createElement('img');
-                        imagen.src = "../RecursosAudiovisuales/Images/" +producto.imagen;
-                        imagen.alt = producto.nombre;
-                        filaProd.appendChild(imagen);
-                    }
-                    // Creamos el párrafo de precio
-                    const precio = document.createElement('p');
-                    precio.textContent = `Precio: ${producto.precio}€`;
-
-                    // Creamos el párrafo de cantidad
-                    const cantidad = crearCampoCantidad(producto);
-                    // Creamos el botón para suamar cantidad
-                    const btnSum = document.createElement('button');
-                    btnSum.className = 'btnSumar';
-                    btnSum.value = producto.idProducto;
-                    btnSum.textContent = '+';
-                    btnSum.onclick = function() {
-                        const cantiActualizada = parseInt(cantidad.value) + 1;
-                        cantidad.value = cantiActualizada;
-                        // Actualizamos el carrito en sessionStorage
-                        let carrito = JSON.parse(sessionStorage.getItem('carrito'));
-                        let index = carrito.findIndex(item => item[0] == producto.idProducto);
-                        if (index != -1) {
-                            carrito[index][1] = cantiActualizada;
-                        }
-                    };
-                    // Creamos el botón para restar cantidad
-                    const btnRest = document.createElement('button');
-                    btnRest.className = 'btnSumar';
-                    btnRest.value = producto.idProducto;
-                    btnRest.textContent = '+';
-                    btnRest.onclick = function() {
-                        const cantiActualizada = parseInt(cantidad.value) - 1;
-                        cantidad.value = cantiActualizada;
-                        // Actualizamos el carrito en sessionStorage
-                        let carrito = JSON.parse(sessionStorage.getItem('carrito'));
-                        let index = carrito.findIndex(item => item[0] == producto.idProducto);
-                        if (cantiActualizada <= 0){
-                            // Si la cantidad es 0, lo eliminamos del carrito
-                            carrito.splice(index, 1);
-                            sessionStorage.setItem('carrito', JSON.stringify(carrito));
-                            document.getElementById(producto.idProducto).remove();
-                        }
-                        if (index != -1) {
-                            carrito[index][1] = cantiActualizada;
-                        }
-                    };
-                    
-                    // Montamos el árbol de elementos
-                    filaProd.appendChild(precio);
-                    filaProd.appendChild(cantidad);
-                    filaProd.appendChild(btnSum);
-                    filaProd.appendChild(btnRest);
-                    filaCarrito.appendChild(filaProd);
-                    divCarrito.appendChild(filaCarrito);
+                if(prodCarrito[0] == producto.idProducto){
+                    productosCarritoCompleto.push(producto);
                 }
             });
         });
+        crearProductosCarrito(productosCarritoCompleto);
     })
     .catch(error => {
-        const divProductos=document.getElementById("productos");
+        document.getElementById("productos").innerHTML = '<h3 style="grid-column:1/4;">No hay productos disponibles</h3>';
     });
 }
-function crearCampoCantidad(producto) {
-    // Creamos el input de cantidad
-    const cantidad = document.createElement('input');
-    cantidad.type = 'text';
-    cantidad.value = prodCarrito[1];
+function crearProductosCarrito(productos){
+    const carrito = JSON.parse(sessionStorage.getItem('carrito'));
+    if(!carrito){
+        document.getElementById('divCarrito').innerHTML="<h3>No hay productos en el carrito</h3>";
+        return;
+    }
+    productos.forEach(producto => {
+        const divCarrito = document.getElementById('divCarrito');
+        const divFilaProducto = document.createElement('div');
+        divFilaProducto.className = 'filaProducto';
+        // Creamos el título <h2>
+        const titulo = document.createElement('h2');
+        titulo.textContent = producto.nombre;
+        divFilaProducto.appendChild(titulo);
 
-    // Solo permitir números al escribir (bloquea letras, símbolos, etc.)
-    cantidad.addEventListener('keypress', (e) => {
-        if (!/[0-9]/.test(e.key)) {
-            e.preventDefault(); // Prohíbe que escriba letras o símbolos
+        //creamos el div de la fila complementaria
+        const divFilaComplementaria = document.createElement('div');
+        divFilaComplementaria.className = 'filaComplementaria';
+        // Creamos la imagen
+        if(producto.imagen){
+            const imagen = document.createElement('img');
+            imagen.src = "../RecursosAudiovisuales/Images/" +producto.imagen;
+            imagen.alt = producto.nombre;
+            divFilaComplementaria.appendChild(imagen);
         }
+        // Creamos el párrafo de precio
+        const precio = document.createElement('p');
+        precio.textContent = `Precio: ${producto.precio}€`;
+        divFilaComplementaria.appendChild(precio);
+
+        // Creamos el campo cantidad
+        const cantidad = document.createElement('p');
+        cantidad.textContent = "Cantidad: " + carrito.find(item => item[0] == producto.idProducto)[1];
+        divFilaComplementaria.appendChild(cantidad);
+
+        const divBotonesFilaComplementaria = document.createElement('div');
+        divBotonesFilaComplementaria.className = 'botonesFilaComplementaria';
+
+        const divBotonesSumarRestar = document.createElement("div");
+        divBotonesSumarRestar.className="botonesSumarRestar";
+        // Creamos el botón de sumar cantidad
+        const botonSumar = document.createElement('button');
+        botonSumar.className = 'botonProducto';
+        botonSumar.textContent = '+';
+        botonSumar.onclick = function() {
+            let carrito = JSON.parse(sessionStorage.getItem('carrito'));
+            let index = carrito.findIndex(item => item[0] == producto.idProducto);
+            if (index != -1) {
+                carrito[index][1] += 1;
+                sessionStorage.setItem('carrito', JSON.stringify(carrito));
+                cantidad.textContent = "Cantidad: " +carrito[index][1];
+            }
+        };
+        divBotonesSumarRestar.appendChild(botonSumar);
+
+        // Creamos el botón de restar cantidad
+        const botonRestar = document.createElement('button');
+        botonRestar.className = 'botonProducto';
+        botonRestar.textContent = '-';
+        botonRestar.onclick = function() {
+            let carrito = JSON.parse(sessionStorage.getItem('carrito'));
+            let index = carrito.findIndex(item => item[0] == producto.idProducto);
+            if (index != -1 && carrito[index][1] >= 1) {
+                carrito[index][1] -= 1;
+                sessionStorage.setItem('carrito', JSON.stringify(carrito));
+                if(carrito[index][1]<=0){
+                    sessionStorage.removeItem("carrito");
+                    crearProductosCarrito();
+                }       
+                cantidad.textContent = "Cantidad: " +carrito[index][1];
+            }
+        };
+        divBotonesSumarRestar.appendChild(botonRestar);
+        divBotonesFilaComplementaria.appendChild(divBotonesSumarRestar);
+        // Creamos el botón de eliminar producto
+        const botonEliminar = document.createElement('button');
+        botonEliminar.className = 'botonProducto';
+        botonEliminar.textContent = 'Eliminar';
+        botonEliminar.onclick = function () {
+            let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+            let index = carrito.findIndex(item => item[0] == producto.idProducto);
+            if (index != -1) {
+                carrito.splice(index, 1);
+                sessionStorage.setItem('carrito', JSON.stringify(carrito)); 
+                if (divCarrito && divFilaProducto) {
+                    divCarrito.removeChild(divFilaProducto);
+                }
+            }
+            if(carrito.length == 0){
+                sessionStorage.removeItem('carrito');
+                divCarrito.innerHTML = '<h3>No hay productos en el carrito</h3>';
+            }
+        };
+        divBotonesFilaComplementaria.appendChild(botonEliminar);
+        divFilaComplementaria.appendChild(divBotonesFilaComplementaria);
+
+        divFilaProducto.appendChild(divFilaComplementaria);
+        divCarrito.appendChild(divFilaProducto);
     });
-
-    // Detectar si lo introducido es un número al cambiar el valor
-    cantidad.addEventListener('input', () => {
-        const valor = cantidad.value.trim();
-
-        if (valor === '') {
-            cantidad.style.border = '2px solid orange';
-        } else if (isNaN(valor)) {
-            cantidad.style.border = '2px solid red';
-        } else {
-            cantidad.style.border = '2px solid green';
-        }
-    });
-
-    cantidad.addEventListener('blur', () => {
-        const valor = parseInt(cantidad.value);
-        if (!isNaN(valor)) {
-            cantidad.value = valor;
-        }
-    });
-
-    return cantidad;
 }
 export function aniadirCarrito(idProducto) {
     let carrito = [];

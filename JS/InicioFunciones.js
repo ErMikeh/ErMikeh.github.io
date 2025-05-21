@@ -29,18 +29,41 @@ window.onload = function() {
 
     //gestionamos el botón de añadir al carrito
     gestionCompra.cargarProductos();
-    if(sessionStorage.getItem('carrito')){
-        document.getElementById("btnCarrito").style.display = "block";
-        generarContenidoCarrito();
-    }
-    gestionCompra.mostrarCarrito();
+    document.getElementById("btnCarrito").addEventListener('click', function(){
+        const overlay = document.getElementById('bloqueadorPantalla');
+        overlay.classList= "activo";
+        const carrito = JSON.parse(sessionStorage.getItem('carrito'));
+        if(carrito && carrito.length > 0){
+            generarContenidoCarrito();
+        } else {
+            const divCarrito = document.getElementById('divCarrito');
+            divCarrito.innerHTML = '<h3>No hay productos en el carrito</h3>';
+            document.getElementById("asidePanel").className = "mostrar";
+        }
+    });
+    
     if(document.getElementById("borrarCarrito")){
         document.getElementById("borrarCarrito").addEventListener('click', function(){
             sessionStorage.removeItem('carrito');
-            document.getElementById("btnCarrito").style.display = "none";
             const divCarrito = document.getElementById('divCarrito');
             divCarrito.innerHTML = '<h3>No hay productos en el carrito</h3>';
         });
+    }
+    if(document.getElementById("cerrarAside")){
+        document.getElementById("cerrarAside").addEventListener('click', function(){
+            const overlay = document.getElementById('bloqueadorPantalla');
+            overlay.classList= "";
+            document.getElementById("asidePanel").className = "";
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    if(document.getElementById("bloqueadorPantalla")){
+        document.getElementById("bloqueadorPantalla").addEventListener("click", function (){
+        const overlay = document.getElementById('bloqueadorPantalla');
+        overlay.classList= "";
+        document.getElementById("asidePanel").className = "";
+    })
     }
 }
 function generarContenidoCarrito(){
@@ -48,10 +71,16 @@ function generarContenidoCarrito(){
     const divCarrito = document.getElementById('divCarrito');
     divCarrito.innerHTML = ''; // Limpiamos el contenido previo
     if (carrito.length == 0) {
+        if(document.getElementById("asidePanel").className == ""){
+            document.getElementById("asidePanel").className = "mostrar";
+        }
         divCarrito.innerHTML = '<h3>No hay productos en el carrito</h3>';
         return;
     }else{
         gestionCompra.generarCarrito();
+        if(document.getElementById("asidePanel").className == ""){
+            document.getElementById("asidePanel").className = "mostrar";
+        }
     }
 }
 function gestionEnviarMensaje(){
@@ -67,7 +96,6 @@ function gestionHamburguesaYMapa(){
     const hamburguesa=document.getElementById('despliegueMenu');
     const mapa=document.getElementById('contenedorMapa');
     if(hamburguesa.checked){
-        document.body.style.overflow = 'hidden';
         mapa.style.position='fixed';
     }else{
         document.body.style.overflow = 'auto';
