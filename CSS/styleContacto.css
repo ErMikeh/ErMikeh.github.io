@@ -162,7 +162,7 @@ header{
     text-decoration: none;
 }
 #enlaceLogoNav img{
-    height: 8vh;        
+    height: 12vh;        
     mix-blend-mode: multiply;
 }
 
@@ -335,7 +335,7 @@ footer{
     .navbar {
         width: 100%;
     }
-    
+
     .nav-container {
         display: flex !important;
         justify-content: space-between;
