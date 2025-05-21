@@ -19,10 +19,6 @@ window.onload = function() {
     const enlaces = document.querySelectorAll(".politicaPrivacidad");
     enlaces.forEach(enlace => {
         enlace.addEventListener("click", function() {
-            if(document.getElementById("btnCarrito").style.display = "none")
-                document.getElementById("btnCarrito").style.display = "block";
-
-            
             gestionContacto.crearModal("Política de Privacidad", politicaPrivacidad);
         });
     });

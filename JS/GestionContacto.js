@@ -45,7 +45,7 @@ export function crearModal(Titulo, Mensaje){
         closeButton.style.marginTop = '20px';
         closeButton.style.padding = '10px 20px';
         closeButton.style.border = 'none';
-        closeButton.style.backgroundColor = '#9AD1C5';
+        closeButton.style.backgroundColor = '#29AC86';
         closeButton.style.color = '#fff';
         closeButton.style.borderRadius = '5px';
         closeButton.style.cursor = 'pointer';
