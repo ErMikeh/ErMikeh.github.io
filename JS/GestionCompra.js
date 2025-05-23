@@ -15,7 +15,12 @@ export function cargarProductos() {
     })
     .catch(error => {
         const divProductos=document.getElementById("productos");
-        divProductos.innerHTML = '<h3 style="grid-column:1/4;">No hay productos disponibles</h3>';
+        document.getElementById("loader").display="none";
+        document.getElementById("loader").className="";
+        const h3Error=document.createElement("h3");
+        h3Error.textContent="No hay productos disponibles"
+        h3Error.style = "grid-column:1/4;";
+        divProductos.appendChild(h3Error);
     });
 }
 
