@@ -56,8 +56,8 @@ window.onload = function() {
             document.getElementById("asidePanel").className = "";
             document.body.style.overflow = 'auto';
         });
+        
     }
-
     if(document.getElementById("bloqueadorPantalla")){
         document.getElementById("bloqueadorPantalla").addEventListener("click", function (){
         const overlay = document.getElementById('bloqueadorPantalla');
@@ -65,6 +65,8 @@ window.onload = function() {
         document.getElementById("asidePanel").className = "";
     })
     }
+
+
 }
 function generarContenidoCarrito(){
     const carrito = JSON.parse(sessionStorage.getItem('carrito'));

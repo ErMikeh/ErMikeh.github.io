@@ -351,6 +351,15 @@ main{
         padding: .5em;
         cursor: pointer;
     }
+    .botonProductoPulsado{
+        min-width: 5vw;
+        background-color: #208b6d;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        padding: .5em;
+        cursor: pointer;
+    }
 /* Estilo para botones de redes sociales */
 #instagram{
     position: fixed;

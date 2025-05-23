@@ -56,7 +56,20 @@ function tarjetaProducto(producto) {
     boton.className = 'botonProducto';
     boton.value = producto.idProducto;
     boton.textContent = 'Añadir al carrito';
-    boton.onclick = gestionEventoBotonesCompra;
+    boton.onclick = function(){
+        mostrarCarrito();
+        const idProducto = this.value;
+        aniadirCarrito(idProducto);
+        if(sessionStorage.getItem('carrito'))
+            document.getElementById("divCarrito").innerHTML = '';  
+        generarCarrito();
+    };
+    boton.onmousedown=function(){
+        this.className="botonProductoPulsado";
+    }
+    boton.onmouseup=function(){
+        this.className="botonProducto";
+    }
 
     // Montamos el árbol de elementos
     compra.appendChild(precio);
@@ -67,14 +80,7 @@ function tarjetaProducto(producto) {
     tarjeta.appendChild(compra);
     divProductos.appendChild(tarjeta);
 }
-function gestionEventoBotonesCompra() {
-    mostrarCarrito();
-    const idProducto = this.value;
-    aniadirCarrito(idProducto);
-    if(sessionStorage.getItem('carrito'))
-        document.getElementById("divCarrito").innerHTML = '';  
-    generarCarrito();
-}
+
 
 // Genera el contenido del carrito
 export function generarCarrito(){
@@ -154,6 +160,12 @@ function crearProductosCarrito(productos){
                 cantidad.textContent = "Cantidad: " +carrito[index][1];
             }
         };
+        botonSumar.onmousedown=function(){
+            this.className="botonProductoPulsado";
+        }
+        botonSumar.onmouseup=function(){
+            this.className="botonProducto";
+        }
         divBotonesSumarRestar.appendChild(botonSumar);
 
         // Creamos el botón de restar cantidad
@@ -173,6 +185,12 @@ function crearProductosCarrito(productos){
                 cantidad.textContent = "Cantidad: " +carrito[index][1];
             }
         };
+        botonRestar.onmousedown=function(){
+            this.className="botonProductoPulsado";
+        }
+        botonRestar.onmouseup=function(){
+            this.className="botonProducto";
+        }
         divBotonesSumarRestar.appendChild(botonRestar);
         divBotonesFilaComplementaria.appendChild(divBotonesSumarRestar);
         // Creamos el botón de eliminar producto
@@ -194,6 +212,12 @@ function crearProductosCarrito(productos){
                 divCarrito.innerHTML = '<h3>No hay productos en el carrito</h3>';
             }
         };
+        botonEliminar.onmousedown=function(){
+            this.className="botonProductoPulsado";
+        }
+        botonEliminar.onmouseup=function(){
+            this.className="botonProducto";
+        }
         divBotonesFilaComplementaria.appendChild(botonEliminar);
         divFilaComplementaria.appendChild(divBotonesFilaComplementaria);
 
